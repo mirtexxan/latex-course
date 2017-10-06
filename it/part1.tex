@@ -17,9 +17,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Esempi}
-\begin{figure}
-\includegraphics[height=0.7\textheight]{esempio1}
-\end{figure}
+\begin{equation}
+\sum_{n=1}^k \frac{1}{n} ≻ \int_1^{k+1} \frac{1}{x} dx = \ln(k+1)
+\end{equation}
+\begin{equation}
+\sum_{n = 0}^\infty \frac{(-1)^{n}}{2n+1} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots = \frac{\pi}{4}
+\end{equation}
+\begin{equation}
+\int_a^b \! f(x) dx = F(b) - F(a)
+\end{equation}
+\begin{equation}
+f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
+\end{equation}
+\begin{equation}
+\textstyle r=|z|=\sqrt{x^2+y^2}
+\end{equation}
+\begin{equation}
+\begin{bmatrix} 1 & 2\\ 3 & 4\\ \end{bmatrix} \begin{bmatrix} 0 & 1\\ 0 & 0\\ \end{bmatrix}= \begin{bmatrix} 0 & 1\\ 0 & 3\\ \end{bmatrix}
+\end{equation}
 \end{frame}
 
 \begin{frame}{Esempi}
@@ -36,12 +51,6 @@ L'egei d`e to~uto o>u katajrasun'omenos, >all`a peijarq~wn m'onon ka`i e>uno~wn 
 \begin{flushright}
 - Marco Aurelio, \emph{Ricordi}
 \end{flushright}
-\end{frame}
-
-\begin{frame}{Esempi}
-\begin{figure}
-\includegraphics[width=0.9\textwidth]{esempio4}
-\end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -172,6 +181,28 @@ che significa \emph{arte} o \emph{tecnica}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Come funziona?}
+\begin{itemize}
+\item Un documento \LaTeX \`e composto di \texttt{testo semplice} inframezzato a
+\cmd{comandi} che ne descrivono la struttura e il significato.
+\item L'applicazione \texttt{latex} compila il testo e i comandi per produrre un documento perfettamente formattato.
+\end{itemize}
+\vskip 2ex
+\begin{center}
+\begin{minted}[frame=single]{latex}
+La rana in Spagna \emph{gracida} in campagna.
+\end{minted}
+\vskip 2ex
+\tikz\node[single arrow,fill=gray,font=\ttfamily\bfseries,%
+  rotate=270,xshift=-1em]{latex};
+\vskip 2ex
+\fbox{La rana in Spagna \emph{gracida} in campagna.}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Come funziona \LaTeX?}
 
 Facciamo un paragone con il signor Pippo che vuole scrivere un programma
@@ -179,18 +210,16 @@ nel suo linguaggio preferito, C
 
 \bigskip{}
 \begin{enumerate}
-\item Pippo scrive un documento di testo che chiamer\`a pippo.c.
-\item \label{enu:compila}Pippo dà sul terminale il comando\\
-
+\item Pippo scrive un documento di testo che chiamer\`a \cmd{pippo.c}.
+\item \label{enu:compila}Pippo d\`a sul terminale il comando
 \begin{minted}[frame=single]{bash}
 gcc pippo.c
 \end{minted}
-
 \item Se la compilazione d\`a errori, Pippo rivede il programma, lo corregge
 e ritorna al passo \ref{enu:compila}.
 \item Se la compilazione ha successo, viene prodotto un file eseguibile,
-\bftt{a.out}.
-\item Pippo prova a vedere se il programma fa ciò che desidera.
+\cmd{a.out}.
+\item Pippo prova a vedere se il programma fa ci\`o che desidera.
 \end{enumerate}
 \end{frame}
 
@@ -202,8 +231,8 @@ e ritorna al passo \ref{enu:compila}.
 Ora Pippo vuole scrivere la documentazione per il suo programma.
 \bigskip
 \begin{enumerate}
-\item Pippo scrive un documento di testo che chiamer\`a \bftt{pippo.tex}.
-\item \label{enu:compilalatex}Pippo dà sul terminale il comando
+\item Pippo scrive un documento di testo che chiamer\`a \cmd{pippo.tex}.
+\item \label{enu:compilalatex}Pippo d\`a sul terminale il comando
 
 \begin{minted}[frame=single]{bash}
 latex pippo.tex
@@ -211,7 +240,7 @@ latex pippo.tex
 
 \item Se la compilazione d\`a errori, Pippo rivede il documento, lo corregge
 e ritorna al passo \ref{enu:compilalatex}.
-\item Se la compilazione ha successo, viene prodotto un file \bftt{pippo.dvi}.
+\item Se la compilazione ha successo, viene prodotto un file \cmd{pippo.dvi}.
 \item Pippo chiama il visualizzatore con
 
 \begin{minted}[frame=single]{bash}
@@ -231,38 +260,16 @@ Ora Pippo vuole scrivere la documentazione per il suo programma in
 un formato pi\`u comune.
 \bigskip
 \begin{enumerate}
-\item Pippo ha gi\`a il documento di testo chiamato \bftt{pippo.tex}.
+\item Pippo ha gi\`a il documento di testo chiamato \cmd{pippo.tex}.
 \item Pippo d\`a sul terminale il comando
 \begin{minted}[frame=single]{bash}
 pdflatex pippo.tex
 \end{minted}
-\item Viene prodotto un file \bftt{pippo.pdf}.
+\item Viene prodotto un file \cmd{pippo.pdf}.
 \end{enumerate}
 \bigskip
-Dato che il documento \bftt{pippo.tex} \`e lo stesso di prima,
+Dato che il documento \cmd{pippo.tex} \`e lo stesso di prima,
 il documento finale \`e solo la resa in PDF di quello precedente.
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Come funziona?}
-\begin{itemize}
-\item Un documento \LaTeX \`e composto di \texttt{testo semplice} inframezzato a
-\cmd{comandi} che ne descrivono la struttura e il significato.
-\item L'applicazione \texttt{latex} compila il testo e i comandi per produrre un documento perfettamente formattato.
-\end{itemize}
-\vskip 2ex
-\begin{center}
-\begin{minted}[frame=single]{latex}
-La rana in Spagna \emph{gracida} in campagna.
-\end{minted}
-\vskip 2ex
-\tikz\node[single arrow,fill=gray,font=\ttfamily\bfseries,%
-  rotate=270,xshift=-1em]{latex};
-\vskip 2ex
-\fbox{La rana in Spagna \emph{gracida} in campagna.}
-\end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -336,14 +343,14 @@ tempo reale.
 \vskip 2em
 \begin{center}
 \fbox{\href{\wlnewdoc{basics.tex}}{%
-Clicca qui per aprire il documento minimale di prima con \wllogo{}}}
+Clicca qui per aprire il documento di prima con \wllogo{}}}
 \\[1ex]\scriptsize{}
-Per migliore compatibilit\`a, consiglio di usare \href{http://www.google.com/chrome}{Chrome} o una versione recente di \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox}.
+Per migliore compatibilit\`a, usate \href{http://www.google.com/chrome}{Chrome} o un  \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox} recente.
 \end{center}
 \vskip 2ex
-\item Nel resto del corso, provate ad eseguire gli esempi, copiandoli
-direttamente su Overleaf.
-\item \textbf{Fatelo davvero, \`e il miglior modo di imparare!}
+\item Nel resto del corso, provate ad eseguire gli esempi, \structure{copiandoli
+direttamente su Overleaf}.
+\item \textbf{No, davvero, \`e il miglior modo di imparare!}
 \end{itemize}
 \end{frame}
 
@@ -375,10 +382,10 @@ gracida in		 montagna.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Caveats}
+\begin{frame}[fragile]{\insertsubsection{}: caratteri speciali}
 \small
 \begin{itemize}
-\item Le virgolette possono essere un po\' tricky: va usato un apostrofo rovesciato \keystroke{\`{}} a sinistra e un apostrofo semplice \keystroke{\'{}} a destra.
+\item Le virgolette richiedono attenzione: va usato un apostrofo rovesciato \keystroke{\`{}} a sinistra e un apostrofo semplice \keystroke{\'{}} a destra
 \begin{exampletwouptiny}
 Virgolette semplici: `testo'.
 
@@ -387,17 +394,47 @@ Virgolette doppie: ``testo''.
 
 \item Alcuni simboli comuni hanno significato speciale in \LaTeX:\\[1ex]
 \begin{tabular}{cl}
-\keystrokebftt{\%} & percento					\\
-\keystrokebftt{\#} & cancelleto / tag			\\
+\keystrokebftt{\%} & simbolo percento			\\
+\keystrokebftt{\#} & cancelletto / tag			\\
 \keystrokebftt{\&} & e commerciale / ampersand	\\
-\keystrokebftt{\$} & dollaro					\\
+\keystrokebftt{\$} & simbolo dollaro			\\
 \end{tabular}
 \item Se provate ad inserirli direttamente, otterrete un messaggio di errore.
-Se volete mostrarli nel documento dovete fare \emph{escape}, facendoli precedere
-da un backslash.
-\begin{exampletwoup}
+Se volete mostrarli nel documento dovete fare \structure{\emph{escape}},
+precedendoli con un backslash \keystrokebftt{\bs}
+\begin{exampletwouptiny}
 \$\%\&\#!
-\end{exampletwoup}
+\end{exampletwouptiny}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}: gli accenti}
+\small
+\begin{itemize}
+\item Dato che non scriviamo in inglese, gli accenti sono importanti.
+\begin{itemize}
+\item \keystrokebftt{\bs`} si usa per l'accento grave
+\item \keystrokebftt{\bs'} si usa per l'accento acuto.
+\end{itemize}
+
+\begin{exampletwouptiny}
+R\`{e}n\'{e} Descartes \'{e} noto
+alla latina come `Cartesio'.
+Fu scienziato e ``filosofo''.
+Mor\`{i} a Stoccolma di polmonite.
+\end{exampletwouptiny}
+
+\item Altri accenti non presenti in italiano:
+\begin{exampletwouptiny}
+Dieresi: Fl\"ugel
+
+Circonflesso: H\^opital
+
+Tilde: Vamos a ga\~nar
+\end{exampletwouptiny}
 \end{itemize}
 \end{frame}
 
@@ -406,9 +443,10 @@ da un backslash.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Gestire gli errori}
 \begin{itemize}
-\item \LaTeX{} si pu\'o confondere quando cerca di compilare un documento.
-Se succede, si interrompe con un messaggio di errore, che dovrete correggere,
-se volete avere qualche speranza di produrre un documento.
+\item \LaTeX{} pu\`o confondersi nel compilare un documento.
+Se succede, si interrompe con un messaggio di errore.
+\item Dovete correggere gli errori, se volete avere qualche speranza di
+produrre un documento.
 \item Per esempio, se provate a scrivere \cmdbs{epmh} invece di \cmdbs{emph},
 \LaTeX{} si lamenter\`a con un errore ``undefined control sequence'' dato che, effettivamente, ``epmh'' non esiste come comando.
 \end{itemize}
@@ -428,7 +466,7 @@ un errore, perlomeno sapete da dove partire per il debugging.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Esercizio 1}
 
-\begin{block}{Digita questo in \LaTeX:
+\begin{block}{Digita questo in \LaTeX{}:%
 \footnote{\url{http://en.wikipedia.org/wiki/Economy_of_the_United_States}}}
 In March 2006, Congress raised that ceiling an additional \$0.79 trillion to
 \$8.97 trillion, which is approximately 68\% of GDP. As of October 4, 2008, the
@@ -483,7 +521,7 @@ Sia $y = m x + b$ dove \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsubsection{}: Notazione}
 \begin{itemize}
-\item Usa il circonflesso (\emph{caret}) \keystrokebftt{\^} per gli apici e la linea bassa (\emph{underscore}) \keystrokebftt{\_} per i pedici.
+\item Usa il circonflesso \keystrokebftt{\^} per gli apici e la linea bassa o \emph{underscore} \keystrokebftt{\_} per i pedici.
 \begin{exampletwouptiny}
 $y = c_2 x^2 + c_1 x + c_0$
 \end{exampletwouptiny}
@@ -498,7 +536,7 @@ $F_n = F_{n-1} + F_{n-2}$ % ok!
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item Ci sono comandi per le lettere Greche e la notazione pi\'u comune.
+\item \LaTeX{} offre molti comandi per le lettere greche e la notazione pi\'u comune.
 \begin{exampletwouptiny}
 $\mu = \alpha \int_t e^{q/rt} dt$
 
@@ -535,7 +573,7 @@ dove $a$, $b$ e $c$ sono \ldots
 \begin{frame}[fragile]{Intermezzo: Ambienti}
 \begin{itemize}
 \item \bftt{equation} \`e un \emph{ambiente} --- un contesto sematico.
-\item Lo stesso comando pu\`o produrre risultati diversi in contesti diversi.
+\item Un comando pu\`o produrre risultati diversi in contesti diversi.
 \begin{exampletwouptiny}
 Possiamo scrivere
 $ \Omega = \sum_{k=1}^{n} \omega_k $
@@ -566,12 +604,12 @@ ambienti diversi.
 
 \item Gli ambienti \bftt{itemize} ed \bftt{enumerate} generano liste.
 \begin{exampletwouptiny}
-\begin{itemize} % for bullet points
+\begin{itemize} % lista puntata
 \item Biscotti
 \item T\'e
 \end{itemize}
 
-\begin{enumerate} % for numbers
+\begin{enumerate} % lista numerata
 \item Biscotti
 \item T\'e
 \end{enumerate}
@@ -586,10 +624,10 @@ ambienti diversi.
 
 \begin{itemize}
 \item Tutti i comandi e gli ambienti mostrati fino ad adesso, sono parte di
-\LaTeX.
+\LaTeX{} \emph{base}.
 
-\item I \emph{pacchetti} sono librerie di comandi e ambienti aggiuntivi.
-Ci sono migliaia di pacchetti liberamente disponibili.
+\item I \emph{pacchetti} sono librerie di comandi e ambienti aggiuntivi:
+ci sono migliaia di pacchetti liberamente disponibili.
 
 \item I pacchetti che vogliamo usare vanno caricati esplicitamente usando il comando
 \cmdbs{usepackage} nel \emph{preambolo}.
@@ -597,9 +635,9 @@ Ci sono migliaia di pacchetti liberamente disponibili.
 \item Esempio: \bftt{amsmath} della American Mathematical Society.
 \begin{minted}[fontsize=\small,frame=single]{latex}
 \documentclass{article}
-\usepackage{amsmath} % preamble
+\usepackage{amsmath} % preambolo
 \begin{document}
-% now we can use commands from amsmath here...
+% da ora in poi possiamo usare i comandi di amsmath...
 \end{document}
 \end{minted}
 \end{itemize}
@@ -616,7 +654,7 @@ Ci sono migliaia di pacchetti liberamente disponibili.
   \Omega = \sum_{k=1}^{n} \omega_k
 \end{equation*}
 \end{exampletwouptiny}
-\item \LaTeX{} tratta lettere adiacenti come variabili moltiplicate l'una con l'altra, cosa che non \`e sempre desiderabile. \bftt{amsmath} definisce comandi per la maggior parte delle funzioni matematiche.
+\item \LaTeX{} tratta lettere adiacenti come variabili moltiplicate tra di loro, ma non \`e sempre desiderabile: \bftt{amsmath} definisce comandi per la maggior parte delle funzioni matematiche.
 \begin{exampletwouptiny}
 \begin{equation*} % sbagliato!
  min_{x,y} (1-x)^2 + 100(y-x^2)^2
@@ -673,11 +711,11 @@ nuova linea.
 \begin{block}{Digita questo in \LaTeX:}
 Sia $X_1, X_2, \ldots, X_n$ una serie di variabili casuali indipendenti ed
 identicamente distribuite con media $\operatorname{E}[X_i] = \mu$ e varianza
-$\operatorname{Var}[X_i] = \sigma^2 < \infty$, laddove
+$\operatorname{Var}[X_i] = \sigma^2 < \infty$, con media
 \begin{equation*}
 S_n = \frac{1}{n}\sum_{i}^{n} X_i
 \end{equation*}
-denoti la loro media. Per $n$ che tende ad infinito, le variabili casuali
+Per $n$ che tende ad infinito, le variabili casuali
 $\sqrt{n}(S_n - \mu)$ convergono in senso distribuzionale ad una gaussiana $N(0, \sigma^2)$.
 \end{block}
 \vskip 2ex
@@ -701,7 +739,7 @@ mia soluzione}}.
 \item Congratulazioni! Avete imparato a\ldots
 \begin{itemize}
 \item Digitare testo in \LaTeX.
-\item Utilizzare molti dei comandi di base.
+\item Utilizzare i comandi di base.
 \item Gestire gli errori via via che compaiono.
 \item Scrivere belissima matematica.
 \item Utilizzare alcuni degli ambienti.
