@@ -16,6 +16,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduzione}
 \begin{frame}{Perch\'e \LaTeX{}?}
 \begin{itemize}
 \item Permette di realizzare documenti professionali e esteticamente appaganti
@@ -126,7 +127,9 @@ La rana in Spagna \emph{gracida} in campagna.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Compila? Un classico programma C}
+\subsection{Compila?}
+
+\begin{frame}[fragile]{\insertsubsection{} Un classico programma C}
 
 Facciamo un paragone con il signor Pippo che vuole scrivere un programma
 nel suo linguaggio preferito, C
@@ -149,7 +152,7 @@ e ritorna al passo \ref{enu:compila}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Compila? Il motore \LaTeX}
+\begin{frame}[fragile]{\insertsubsection{} Il motore \LaTeX}
 
 Ora Pippo vuole scrivere la documentazione per il suo programma.
 \bigskip
@@ -177,7 +180,7 @@ e controlla che non ci siano errori concettuali.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Compila? pdf\LaTeX}
+\begin{frame}[fragile]{\insertsubsection{} pdf\LaTeX}
 
 Ora Pippo vuole scrivere la documentazione per il suo programma in
 un formato pi\`u comune.
@@ -225,7 +228,39 @@ il documento finale \`e solo la resa in PDF di quello precedente.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{In sintesi: un vero e proprio cambio di \structure{paradigma}}
+
+\begin{frame}{Distribuzioni di \LaTeX{}}
+
+\begin{block}{Cosa scaricare}
+
+\begin{itemize}
+\item GNU/Linux: \TeX{}Live come sorgente o come pacchetto;
+\item Mac OS X: Mac\TeX{};
+\item Microsoft Windows: Mik\TeX{} (ce ne sono anche altri)
+\end{itemize}
+\end{block}
+
+\begin{itemize}
+\item Ottenuta la distribuzione, il codice si scrive con un editor
+	\begin{itemize}
+	\item Un \structure{qualsiasi} blocco note serve allo scopo
+	\end{itemize}
+\item Esistono anche ambienti integrati
+	\begin{itemize}
+	\item Editor `classici' come \TeX{}Works o \TeX{}Maker
+	\item Strumenti `simil-word' come Lyx
+	\item \ldots o web application come \wllogo
+	\end{itemize}
+\item I dettagli sono lasciati al lettore come \alert{facile} esercizio.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{In sintesi: un vero e proprio cambio di paradigma}
 
 \begin{block}{Pregi}
 \begin{itemize}
@@ -242,59 +277,6 @@ il documento finale \`e solo la resa in PDF di quello precedente.
 \begin{alertblock}
 {Usate i comandi per descrivere `cio che \`e' e non `ci\`o che appare: concentratevi sul contenuto e Lasciate fare a \LaTeX{} il suo lavoro!}
 \end{alertblock}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Dove funziona?}
-
-\begin{itemize}
-\item Non dovrebbe stupire che per usare \LaTeX{} occorra un calcolatore.
-Quale? Non importa, basta che vada!
-\item Il sistema si pu\`o compilare su tutte le pi\`u diffuse architetture e
-i pi\`u diffusi sistemi operativi.
-\begin{itemize}
-\item GNU/Linux
-\item Apple$^{\circledR}$ Mac OS X
-\item Microsoft$^{\circledR}$ Windows${{\texttrademark}}$
-\end{itemize}
-
-\end{itemize}
-
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Distribuzioni}
-
-\begin{block}{Cosa scaricare}
-
-\begin{itemize}
-\item GNU/Linux: \TeX{}Live come sorgente o come pacchetto;
-\item Mac OS X: Mac\TeX{};
-\item Windows: Mik\TeX{} (ce ne sono anche altri)
-\end{itemize}
-\end{block}
-
-\begin{itemize}
-\item Ottenuta la distribuzione, il codice si scrive con un editor
-	\begin{itemize}
-	\item Un \structure{qualsiasi} blocco note serve allo scopo
-	\end{itemize}
-\item Esistono anche ambienti integrati
-	\begin{itemize}
-	\item Editor `classici' come \TeX{}Works o \TeX{}Maker
-	\item Strumenti avanzati WYSIWYG come Lyx
-	\item \ldots o web application come \wllogo
-	\end{itemize}
-\item I dettagli sono lasciati al lettore come \alert{facile} esercizio.
-\end{itemize}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -352,17 +334,18 @@ direttamente su Overleaf}.
 e \cmdend{document}.
 \item Nella maggior parte dei casi, potete inserire testo normalmente.
 \begin{exampletwouptiny}
-Le parole sono separate da uno o pi\`u
-spazi.
+Le parole sono separate da uno
+o pi\`u spazi.
 
-I paragrafi sono separati da una o pi\`u
-righe vuote.
+I paragrafi sono separati da una
+o pi\`u righe vuote.
 \end{exampletwouptiny}
-\item Lo spazio nel file sorgente viene aggregato nell'output.
+\item Lo spazio nel file sorgente viene \emph{aggregato} nell'output.
 \begin{exampletwouptiny}
 La   rana       in Spagna
 gracida in		 montagna.
 \end{exampletwouptiny}
+\item \keystrokebftt{\bs\bs} forza l'andata a capo, ma non crea un nuovo paragrafo.
 \end{itemize}
 \end{frame}
 
@@ -380,47 +363,51 @@ Virgolette doppie: ``testo''.
 \end{exampletwouptiny}
 
 \item Alcuni simboli comuni hanno significato speciale in \LaTeX:\\[1ex]
-\begin{tabular}{cl}
-\keystrokebftt{\%} & simbolo percento			\\
-\keystrokebftt{\#} & cancelletto / tag			\\
-\keystrokebftt{\&} & e commerciale / ampersand	\\
-\keystrokebftt{\$} & simbolo dollaro			\\
+\begin{tabular}{cl|l}
+\keystrokebftt{\%} & percento    & commenti \\
+\keystrokebftt{\#} & cancelletto & comandi custom \\
+\keystrokebftt{\&} & ampersand   & tabelle \\
+\keystrokebftt{\$} & dollaro     & matematica \\
 \end{tabular}
 \item Se provate ad inserirli direttamente, otterrete un messaggio di errore.
 Se volete mostrarli nel documento dovete fare \structure{\emph{escape}},
-precedendoli con un backslash \keystrokebftt{\bs}
+precedendoli con un backslash \keystrokebftt{\bs}\\
 \begin{exampletwouptiny}
 \$\%\&\#!
 \end{exampletwouptiny}
 \end{itemize}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[fragile]{\insertsubsection{}: gli accenti}
 \small
 \begin{itemize}
-\item Dato che non scriviamo in inglese, gli accenti sono importanti.
+\item Il caratteri base di \LaTeX{} sono per la lingua inglese (ASCII), ma per molte altre lingue, gli accenti sono importanti.
 \begin{itemize}
-\item \keystrokebftt{\bs`} si usa per l'accento grave
-\item \keystrokebftt{\bs'} si usa per l'accento acuto.
+\item \cmd{\bs`} si usa per l'accento grave
+\item \cmd{\bs'} si usa per l'accento acuto.
+\item \ldots in alternativa si possono inserire direttamente da tastiera
+\begin{minted}{latex}
+\usepackage[latin1]{inputenc}
+\end{minted}
 \end{itemize}
-
+\item Esempio:
 \begin{exampletwouptiny}
 R\`{e}n\'{e} Descartes \'{e} noto
-alla latina come `Cartesio'.
-Fu scienziato e ``filosofo''.
+alla latina come `Cartesio', 
+fu scienziato e ``filosofo''.
 Mor\`{i} a Stoccolma di polmonite.
 \end{exampletwouptiny}
 
-\item Altri accenti non presenti in italiano:
+\item Altri glifi non presenti in italiano, e relativi comandi:
 \begin{exampletwouptiny}
-Dieresi: Fl\"ugel
-
-Circonflesso: H\^opital
-
-Tilde: Vamos a ga\~nar
+Dieresi: Fl\"ugel\\
+Circonflesso: H\^opital\\
+Tilde: Vamos a ga\~nar\\
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -431,11 +418,11 @@ Tilde: Vamos a ga\~nar
 \begin{frame}[fragile]{Gestire gli errori}
 \begin{itemize}
 \item \LaTeX{} pu\`o confondersi nel compilare un documento.
-Se succede, si interrompe con un messaggio di errore.
+Se succede, si interrompe con un \structure{messaggio di errore}.
 \item Dovete correggere gli errori, se volete avere qualche speranza di
 produrre un documento.
 \item Per esempio, se provate a scrivere \cmdbs{epmh} invece di \cmdbs{emph},
-\LaTeX{} si lamenter\`a con un errore ``undefined control sequence'' dato che, effettivamente, ``epmh'' non esiste come comando.
+\LaTeX{} si lamenter\`a con un errore \texttt{undefined control sequence} dato che ``epmh'' non esiste come comando.
 \end{itemize}
 \begin{block}{Qualche consiglio sugli errori}
 \begin{enumerate}
@@ -453,12 +440,14 @@ un errore, perlomeno sapete da dove partire per il debugging.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Esercizio 1}
 
-\begin{block}{Digita questo in \LaTeX{}:%
+\begin{block}{Scrivi questo in \LaTeX{}:%
 \footnote{\url{http://en.wikipedia.org/wiki/Economy_of_the_United_States}}}
-In March 2006, Congress raised that ceiling an additional \$0.79 trillion to
-\$8.97 trillion, which is approximately 68\% of GDP. As of October 4, 2008, the
-``Emergency Economic Stabilization Act of 2008'' raised the current debt ceiling
-to \$11.3 trillion.
+Nel Marzo 2006, il Congresso aument\`o la soglia di
+\$790 miliardi per un totale di \$8970 miliardi,
+che rappresentava circa il 68\% del PIL. Il 4 Ottobre
+2008, l'``Emergency Economic Stabilization
+Act'' aument\`o ulteriormente il tetto del debito
+a \$11300 miliardi.
 \end{block}
 \vskip 2ex
 \begin{center}
@@ -467,7 +456,8 @@ Clicca per aprire l'esercizio in \wllogo{}}}
 \end{center}
 
 \begin{itemize}
-\item Suggerimento: occhio ai caratteri speciali!
+\item Suggerimento: attenti ai caratteri speciali!
+\item Non dimenticate virgolette e accenti \ldots
 \item Dopo qualche tentativo,
 \fbox{\href{\wlnewdoc{basics-exercise-1-solution.tex}}{%
 cliccate qui per la soluzione}}.
@@ -487,12 +477,12 @@ Lo si usa per separare l'ambiente matematico dal testo.\\[1ex]
 Siano a e b due interi positivi
 diversi, e sia c = a - b + 1.
 
-% con ambiente matematico:
+% molto meglio, no?
 Siano $a$ e $b$ due interi positivi
 diversi, e sia $c = a - b + 1$.
 \end{exampletwouptiny}
 \item I simboli dollaro vanno sempre usati in coppia --- un per aprire l'ambiente
-matematico, l'altro per chiouderlo.
+matematico, l'altro per chiuderlo.
 \item Come al solito, \LaTeX{} gestisce la spaziatura in automatico,
 ignorando quella dell'utente.
 \begin{exampletwouptiny}
@@ -508,14 +498,15 @@ Sia $y = m x + b$ dove \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsubsection{}: Notazione}
 \begin{itemize}
-\item Usa il circonflesso \keystrokebftt{\^} per gli apici e la linea bassa o \emph{underscore} \keystrokebftt{\_} per i pedici.
+\item Usate circonflesso \keystrokebftt{\^} per gli apici e \emph{underscore} \keystrokebftt{\_} per i pedici.
+
 \begin{exampletwouptiny}
 $y = c_2 x^2 + c_1 x + c_0$
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item Usa le parentesi graffe \keystrokebftt{\{} \keystrokebftt{\}} per apici e 
-pedici compositi.
+\item Usate le parentesi graffe \keystrokebftt{\{} \keystrokebftt{\}} per apici e 
+pedici pi\`u lunghi.
 \begin{exampletwouptiny}
 $F_n = F_n-1 + F_n-2$     % oops!
 
@@ -523,7 +514,8 @@ $F_n = F_{n-1} + F_{n-2}$ % ok!
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item \LaTeX{} offre molti comandi per le lettere greche e la notazione pi\'u comune.
+\item \LaTeX{} offre molti comandi per rappresentare le lettere greche e la notazione pi\`u comune.
+
 \begin{exampletwouptiny}
 $\mu = \alpha \int_t e^{q/rt} dt$
 
@@ -549,7 +541,7 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}
 dove $a$, $b$ e $c$ sono \ldots
 \end{exampletwouptiny}
 \vskip 1em
-{\scriptsize Attenzione: \LaTeX{} ignora gli spazi nella matematica, ma non
+{\scriptsize Attenzione: \LaTeX{} ignora gli spazi in ambiente matematico, ma non
 \`e in grado di gestire le line vuote --- non usatele!}
 \end{itemize}
 \end{frame}
@@ -559,7 +551,7 @@ dove $a$, $b$ e $c$ sono \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Intermezzo: Ambienti}
 \begin{itemize}
-\item \bftt{equation} \`e un \emph{ambiente} --- un contesto sematico.
+\item \bftt{equation} \`e un \emph{ambiente} --- un \structure{contesto sematico}.
 \item Un comando pu\`o produrre risultati diversi in contesti diversi.
 \begin{exampletwouptiny}
 Possiamo scrivere
@@ -571,11 +563,11 @@ in linea, o usare un ambiente
 per mostrarlo.
 \end{exampletwouptiny}
 \vskip 2ex
-\item Nota che $\Sigma$ \`e pi\`u grande nell'ambiente \bftt{equation}, e
+\item Notate che $\Sigma$ \`e pi\`u grande nell'ambiente \bftt{equation}, e
 che apici e pedici cambiano di posizione, nonostante si siano usati gli
 stessi comandi
 \vskip 1em
-{\scriptsize Per inciso, avremmo potuto scrivere \bftt{\$...\$} come
+{\scriptsize Per simmetria, avremmo potuto scrivere \bftt{\$...\$} come
 \cmdbegin{math}\bftt{...}\cmdend{math}.}
 \end{itemize}
 \end{frame}
@@ -617,7 +609,7 @@ ambienti diversi.
 ci sono migliaia di pacchetti liberamente disponibili.
 
 \item I pacchetti che vogliamo usare vanno caricati esplicitamente usando il comando
-\cmdbs{usepackage} nel \emph{preambolo}.
+\cmdbs{usepackage} nel \structure{preambolo}.
 
 \item Esempio: \bftt{amsmath} della American Mathematical Society.
 \begin{minted}[fontsize=\small,frame=single]{latex}
@@ -695,9 +687,9 @@ nuova linea.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Esercizio 2}
 
-\begin{block}{Digita questo in \LaTeX:}
+\begin{block}{Scrivi questo in \LaTeX:}
 Siano $X_1, X_2, \ldots, X_n$ una serie di variabili casuali indipendenti ed
-identicamente distribuite con media $\operatorname{E}[X_i] = \mu$ e varianza
+identicamente distribuite tali per cui $\operatorname{E}[X_i] = \mu$ e
 $\operatorname{Var}[X_i] = \sigma^2 < \infty$, con media
 \begin{equation*}
 S_n = \frac{1}{n}\sum_{i}^{n} X_i
@@ -712,7 +704,7 @@ Clicca per aprire questo esercizio in \wllogo{}}}
 \end{center}
 \begin{itemize}
 \item Suggerimento: il comando per $\infty$ \`e \cmdbs{infty}.
-\item Qui puoi trovare la 
+\item Qui potete trovare la 
 \fbox{\href{\wlnewdoc{basics-exercise-2-solution.tex}}{%
 mia soluzione}}.
 \end{itemize}
@@ -723,19 +715,19 @@ mia soluzione}}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Fine della prima parte}
 \begin{itemize}
-\item Congratulazioni! Avete imparato a\ldots
+\item \structure{Congratulazioni!} Avete imparato a\ldots
 \begin{itemize}
-\item Digitare testo in \LaTeX.
+\item Inserire testo in \LaTeX.
 \item Utilizzare i comandi di base.
 \item Gestire gli errori via via che compaiono.
-\item Scrivere belissima matematica.
-\item Utilizzare alcuni degli ambienti.
+\item Scrivere della bellissima matematica.
+\item Utilizzare alcuni ambienti.
 \item Caricare pacchetti.
 \end{itemize}
 \item Non \`e fantastico?
-\item Nella seconda parte, impareremo ad usare \LaTeX{} per scrivere documenti
-strutturati con sezioni, riferimenti incrociati, figure, tabelle e bigliografia.
-Alla prossima!
+\item Nella \structure{seconda parte}, impareremo ad usare \LaTeX{} per scrivere
+documenti strutturati con sezioni, riferimenti incrociati, figure,
+tabelle, bibliografia\ldots. Alla prossima!
 \end{itemize}
 \end{frame}
 
