@@ -88,7 +88,7 @@ L'egei d`e to~uto o>u katajrasun'omenos, >all`a peijarq~wn m'onon ka`i e>uno~wn 
 \begin{itemize}
 \item \TeX{} \`e stato creato a Stanford da Donald E. Knuth
 \item Il nome deriva dalla radice greca di parole come
-\textbf{$\tau\epsilon\chi\nu\acute{\eta}$}
+\textbf{\Large $$\tau\epsilon\chi\nu\acute{\eta}$$}
 che significa \emph{arte} o \emph{tecnica}.
 \begin{itemize}
 \item la pronuncia dovrebbe essere \emph{tech} (come il tedesco \emph{Bach})
@@ -97,7 +97,7 @@ che significa \emph{arte} o \emph{tecnica}.
 \item \LaTeX{} \`e un set di macro per \TeX creato da Leslie Lamport
 
 \begin{itemize}
-\item oramai nessuno usa pi\`u \TeX base
+\item oramai nessuno usa pi\`u \TeX{} base
 \item la pronuncia usuale italiana \`e \emph{latek}.
 \end{itemize}
 \end{itemize}
@@ -109,19 +109,25 @@ che significa \emph{arte} o \emph{tecnica}.
 
 \begin{frame}[fragile]{Come funziona?}
 \begin{itemize}
-\item Un documento \LaTeX \`e composto di \texttt{testo semplice} inframezzato a
+\item Un documento \LaTeX{} \`e composto di \texttt{testo semplice} inframezzato a
 \cmd{comandi} che ne descrivono la struttura e il significato.
-\item L'applicazione \texttt{latex} \alert{compila} il testo e i comandi per produrre un documento perfettamente formattato.
+\item L'applicazione \texttt{latex} \emph{compila} il testo e i comandi per produrre un documento perfettamente formattato.
+\item In altre parole: quello che l'utente vede sullo schermo \structure{non \`e} il documento formattato.
+\begin{itemize}
+\item L'opposto di Word insomma, pi\`u simile ad HTML\ldots
+\item What You See is What You Get vs. What You Mean
 \end{itemize}
-\vskip 2ex
+
+\end{itemize}
+\vskip 1ex
 \begin{center}
 \begin{minted}[frame=single]{latex}
 La rana in Spagna \emph{gracida} in campagna.
 \end{minted}
-\vskip 2ex
+\vskip 1ex
 \tikz\node[single arrow,fill=gray,font=\ttfamily\bfseries,%
   rotate=270,xshift=-1em]{latex};
-\vskip 2ex
+\vskip 1ex
 \fbox{La rana in Spagna \emph{gracida} in campagna.}
 \end{center}
 \end{frame}
@@ -129,81 +135,7 @@ La rana in Spagna \emph{gracida} in campagna.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Compila?}
-
-\begin{frame}[fragile]{\insertsubsection{} Un classico programma C}
-
-Facciamo un paragone con il signor Pippo che vuole scrivere un programma
-nel suo linguaggio preferito, C
-
-\bigskip{}
-\begin{enumerate}
-\item Pippo scrive un documento di testo che chiamer\`a \cmd{pippo.c}.
-\item \label{enu:compila}Pippo d\`a sul terminale il comando
-\begin{minted}[frame=single]{bash}
-gcc pippo.c
-\end{minted}
-\item Se la compilazione d\`a errori, Pippo rivede il programma, lo corregge
-e ritorna al passo \ref{enu:compila}.
-\item Se la compilazione ha successo, viene prodotto un file eseguibile,
-\cmd{a.out}.
-\item Pippo prova a vedere se il programma fa ci\`o che desidera.
-\end{enumerate}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{} Il motore \LaTeX}
-
-Ora Pippo vuole scrivere la documentazione per il suo programma.
-\bigskip
-\begin{enumerate}
-\item Pippo scrive un documento di testo che chiamer\`a \cmd{pippo.tex}.
-\item \label{enu:compilalatex}Pippo d\`a sul terminale il comando
-
-\begin{minted}[frame=single]{bash}
-latex pippo.tex
-\end{minted}
-
-\item Se la compilazione d\`a errori, Pippo rivede il documento, lo corregge
-e ritorna al passo \ref{enu:compilalatex}.
-\item Se la compilazione ha successo, viene prodotto un file \cmd{pippo.dvi}.
-\item Pippo chiama il visualizzatore con
-
-\begin{minted}[frame=single]{bash}
-xdvi pippo
-\end{minted}
-
-e controlla che non ci siano errori concettuali.
-\end{enumerate}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{} pdf\LaTeX}
-
-Ora Pippo vuole scrivere la documentazione per il suo programma in
-un formato pi\`u comune.
-\bigskip
-\begin{enumerate}
-\item Pippo ha gi\`a il documento di testo chiamato \cmd{pippo.tex}.
-\item Pippo d\`a sul terminale il comando
-\begin{minted}[frame=single]{bash}
-pdflatex pippo.tex
-\end{minted}
-\item Viene prodotto un file \cmd{pippo.pdf}.
-\end{enumerate}
-\bigskip
-Dato che il documento \cmd{pippo.tex} \`e lo stesso di prima,
-il documento finale \`e solo la resa in PDF di quello precedente.
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Alcuni esempi di comandi\ldots}
+\begin{frame}[fragile]{Alcuni esempi di comandi}
 \begin{exampletwoup}
 \begin{itemize}
 \item T\'e
@@ -231,55 +163,131 @@ il documento finale \`e solo la resa in PDF di quello precedente.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Distribuzioni di \LaTeX{}}
-
-\begin{block}{Cosa scaricare}
-
-\begin{itemize}
-\item GNU/Linux: \TeX{}Live come sorgente o come pacchetto;
-\item Mac OS X: Mac\TeX{};
-\item Microsoft Windows: Mik\TeX{} (ce ne sono anche altri)
-\end{itemize}
-\end{block}
-
-\begin{itemize}
-\item Ottenuta la distribuzione, il codice si scrive con un editor
-	\begin{itemize}
-	\item Un \structure{qualsiasi} blocco note serve allo scopo
-	\end{itemize}
-\item Esistono anche ambienti integrati
-	\begin{itemize}
-	\item Editor `classici' come \TeX{}Works o \TeX{}Maker
-	\item Strumenti `simil-word' come Lyx
-	\item \ldots o web application come \wllogo
-	\end{itemize}
-\item I dettagli sono lasciati al lettore come \alert{facile} esercizio.
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{In sintesi: un vero e proprio cambio di paradigma}
+\begin{frame}[fragile]{Un vero e proprio cambio di paradigma}
 
 \begin{block}{Pregi}
 \begin{itemize}
-	\item Nelle distribuzioni sono compresi stili per la composizione di articoli o \structure{documenti di livello professionale}.
-	\item La composizione di \alert{formule matematiche} \`e di altissimo livello.
-	\item L'utente deve concentrarsi solo sul \structure{contenuto del documento e non sulla sua forma finale}.
+	\item \LaTeX{} comprende stili per la composizione di articoli o documenti di livello professionale.
+	\item La composizione di formule matematiche \`e di altissimo livello.
+	\item L'utente deve concentrarsi solo sul \structure{contenuto} del documento e non sulla sua \structure{forma} finale.
 	\item Si possono generare note a pi\`e di pagina, riferimenti incrociati,
-	bibliografie e indici in modo \structure{automatico}.
+	bibliografie e indici in modo automatico.
 	\item Migliaia di persone usano \LaTeX: è facile trovare supporto;
 	\item \`E gratis.
 \end{itemize}
 \end{block}
 
-\begin{alertblock}
-{Usate i comandi per descrivere `cio che \`e' e non `ci\`o che appare: concentratevi sul contenuto e Lasciate fare a \LaTeX{} il suo lavoro!}
+
+\begin{alertblock}{\ldots e ricordate}
+Usate i comandi per descrivere `cio che \`e' e non `ci\`o che appare': concentratevi sul contenuto e Lasciate fare a \LaTeX{} il suo lavoro!
 \end{alertblock}
 \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Compila?}
+%
+%\begin{frame}[fragile]{\insertsubsection{} Un classico programma C}
+%
+%Facciamo un paragone con il signor Pippo che vuole scrivere un programma
+%nel suo linguaggio preferito, C
+%
+%\bigskip{}
+%\begin{enumerate}
+%\item Pippo scrive un documento di testo che chiamer\`a \cmd{pippo.c}.
+%\item \label{enu:compila}Pippo d\`a sul terminale il comando
+%\begin{minted}[frame=single]{bash}
+%gcc pippo.c
+%\end{minted}
+%\item Se la compilazione d\`a errori, Pippo rivede il programma, lo corregge
+%e ritorna al passo \ref{enu:compila}.
+%\item Se la compilazione ha successo, viene prodotto un file eseguibile,
+%\cmd{a.out}.
+%\item Pippo prova a vedere se il programma fa ci\`o che desidera.
+%\end{enumerate}
+%\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]{\insertsubsection{} Il motore \LaTeX}
+%
+%Ora Pippo vuole scrivere la documentazione per il suo programma.
+%\bigskip
+%\begin{enumerate}
+%\item Pippo scrive un documento di testo che chiamer\`a \cmd{pippo.tex}.
+%\item \label{enu:compilalatex}Pippo d\`a sul terminale il comando
+%
+%\begin{minted}[frame=single]{bash}
+%latex pippo.tex
+%\end{minted}
+%
+%\item Se la compilazione d\`a errori, Pippo rivede il documento, lo corregge
+%e ritorna al passo \ref{enu:compilalatex}.
+%\item Se la compilazione ha successo, viene prodotto un file \cmd{pippo.dvi}.
+%\item Pippo chiama il visualizzatore con
+%
+%\begin{minted}[frame=single]{bash}
+%xdvi pippo
+%\end{minted}
+%
+%e controlla che non ci siano errori concettuali.
+%\end{enumerate}
+%\end{frame}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[fragile]{\insertsubsection{} pdf\LaTeX}
+%
+%Ora Pippo vuole scrivere la documentazione per il suo programma in
+%un formato pi\`u comune.
+%\bigskip
+%\begin{enumerate}
+%\item Pippo ha gi\`a il documento di testo chiamato \cmd{pippo.tex}.
+%\item Pippo d\`a sul terminale il comando
+%\begin{minted}[frame=single]{bash}
+%pdflatex pippo.tex
+%\end{minted}
+%\item Viene prodotto un file \cmd{pippo.pdf}.
+%\end{enumerate}
+%\bigskip
+%Dato che il documento \cmd{pippo.tex} \`e lo stesso di prima,
+%il documento finale \`e solo la resa in PDF di quello precedente.
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}{Distribuzioni di \LaTeX{}}
+%
+%\begin{block}{Cosa scaricare}
+%
+%\begin{itemize}
+%\item GNU/Linux: \TeX{}Live come sorgente o come pacchetto;
+%\item Mac OS X: Mac\TeX{};
+%\item Microsoft Windows: Mik\TeX{} (ce ne sono anche altri)
+%\end{itemize}
+%\end{block}
+%
+%\begin{itemize}
+%\item Ottenuta la distribuzione, il codice si scrive con un editor
+%	\begin{itemize}
+%	\item Un \structure{qualsiasi} blocco note serve allo scopo
+%	\end{itemize}
+%\item Esistono anche ambienti integrati
+%	\begin{itemize}
+%	\item Editor `classici' come \TeX{}Works o \TeX{}Maker
+%	\item Strumenti `simil-word' come Lyx
+%	\item \ldots o web application come \wllogo
+%	\end{itemize}
+%\item I dettagli sono lasciati al lettore come \alert{facile} esercizio.
+%\end{itemize}
+%
+%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -295,7 +303,7 @@ il documento finale \`e solo la resa in PDF di quello precedente.
 \item Il documento \LaTeX{} minimale:
 \inputminted[frame=single]{latex}{basics.tex}
 \item Tutti i comandi iniziano con un \emph{backslash} \keystrokebftt{\bs}.
-\item Ogni documenti inizia con un comando \cmdbs{documentclass}.
+\item Ogni documento inizia con un comando \cmdbs{documentclass}.
 \item L'\emph{argomento} tra parentesi graffe \keystrokebftt{\{} \keystrokebftt{\}} indica a \LaTeX{} che tipo di documento stiamo creano: un \bftt{article}.
 \item Il simbolo di percento \keystrokebftt{\%} d\`a inizio ad un \emph{commento}
 --- \LaTeX{} ignorer\`a il resto della riga.
@@ -309,9 +317,10 @@ il documento finale \`e solo la resa in PDF di quello precedente.
 \begin{frame}[fragile]{\insertsubsection{} con \wllogo}
 \begin{itemize}
 \item Overleaf \`e un webapp per scrivere documenti in \LaTeX.
-\item `Compila' un sorgente \LaTeX{} e mostra i risultati in automatico e in
-tempo reale.
-\vskip 2em
+\item Compila un sorgente \LaTeX{} e mostra i risultati in automatico e in
+tempo reale. Permette di lavorare in \structure{condivisione}.
+\item Senza preoccuparsi di dettagli come l'installazione o l'editor.
+\vskip 2ex
 \begin{center}
 \fbox{\href{\wlnewdoc{basics.tex}}{%
 Clicca qui per aprire il documento di prima con \wllogo{}}}
@@ -319,8 +328,8 @@ Clicca qui per aprire il documento di prima con \wllogo{}}}
 Per migliore compatibilit\`a, usate \href{http://www.google.com/chrome}{Chrome} o un  \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox} recente.
 \end{center}
 \vskip 2ex
-\item Nel resto del corso, provate ad eseguire gli esempi, \structure{copiandoli
-direttamente su Overleaf}.
+\item Nel resto del corso, provate ad eseguire gli esempi, copiandoli
+direttamente su Overleaf.
 \item \textbf{No, davvero, \`e il miglior modo di imparare!}
 \end{itemize}
 \end{frame}
@@ -347,7 +356,7 @@ o pi\`u righe vuote.
 La   rana       in Spagna
 gracida in		 montagna.
 \end{exampletwouptiny}
-\item \keystrokebftt{\bs\bs} forza l'andata a capo, ma non crea un nuovo paragrafo.
+\item \keystrokebftt{\bs}\keystrokebftt{\bs} forza l'andata a capo, ma non crea un nuovo paragrafo.
 \end{itemize}
 \end{frame}
 
@@ -385,18 +394,16 @@ precedendoli con un backslash \keystrokebftt{\bs}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{\insertsubsection{}: gli accenti}
+\begin{frame}[fragile]{\insertsubsection{}: accenti}
 \small
 \begin{itemize}
 \item Il caratteri base di \LaTeX{} sono per la lingua inglese (ASCII), ma per molte altre lingue, gli accenti sono importanti.
 \begin{itemize}
 \item \cmd{\bs`} (backslash+backtick) si usa per l'accento grave. Sfortunatamente l'apostrofo rovesciato non \`e semplice da inserire con la tastiera italiana.
 \item \cmd{\bs'} (backslash+apostrofo) si usa per l'accento acuto.
-\item Oppure si possono inserire direttamente le lettere accentate se:
-\begin{minted}{latex}
-\usepackage[latin1]{inputenc}
-\end{minted}
 \end{itemize}
+\item Oppure si possono inserire direttamente le lettere accentate usando:
+\mintinline{latex}!\usepackage[latin1]{inputenc}!
 \item Esempio:
 \begin{exampletwouptiny}
 R\`{e}n\'{e} Descartes \'{e} noto
@@ -410,6 +417,40 @@ Mor\`{i} a Stoccolma di polmonite.
 Dieresi: Fl\"ugel\\
 Circonflesso: H\^opital\\
 Tilde: Vamos a ga\~nar\\
+\end{exampletwouptiny}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Interludio: comandi}
+\begin{itemize}
+\item Tutti i comandi iniziano con \keystrokebftt{\bs} seguito da un simbolo (come per gli accenti) o una parola. Attenti a typos e maiuscole!
+\item Effetto solo sull'argomento o sull'intero `paragrafo'
+
+\begin{exampletwouptiny}
+Parola in \emph{italico}.\\
+\it Paragrafo  in italico.
+\end{exampletwouptiny}
+\vskip 1ex
+\item I comandi possono avere argomenti obbligatori e opzionali
+\vskip 1ex
+\begin{exampletwouptiny}
+\framebox        {un esempio} sciocco
+
+\framebox[2cm]   {un esempio} sciocco
+
+\framebox[2cm][r]{un esempio} sciocco
+
+\end{exampletwouptiny}
+\vskip 1ex
+
+\item Caso speciale: la tilde \keystrokebftt{\textasciitilde}. Comando di un carattere, serve per specificare uno spazio che non si pu\`o separare
+
+\begin{exampletwouptiny}
+In riferimento all'es. a pag. 2\\
+In riferimento all'es. a pag.~2
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -500,7 +541,7 @@ Sia $y = m x + b$ dove \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsubsection{}: Notazione}
 \begin{itemize}
-\item Usate circonflesso \keystrokebftt{\^} per gli apici e \emph{underscore} \keystrokebftt{\_} per i pedici.
+\item Usate circonflesso \keystrokebftt{\^} per gli apici e \emph{underscore} \keystrokebftt{\_} per i pedici. Sono altri due comandi speciali di un solo carattere.
 
 \begin{exampletwouptiny}
 $y = c_2 x^2 + c_1 x + c_0$
@@ -508,7 +549,7 @@ $y = c_2 x^2 + c_1 x + c_0$
 \vskip 2ex
 
 \item Usate le parentesi graffe \keystrokebftt{\{} \keystrokebftt{\}} per apici e 
-pedici pi\`u lunghi.
+pedici pi\`u lunghi. Racchiudono gli argomenti dei comandi \keystrokebftt{\^} e \keystrokebftt{\_}.
 \begin{exampletwouptiny}
 $F_n = F_n-1 + F_n-2$     % oops!
 
@@ -516,7 +557,7 @@ $F_n = F_{n-1} + F_{n-2}$ % ok!
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item \LaTeX{} offre molti comandi per rappresentare le lettere greche e la notazione pi\`u comune.
+\item \LaTeX{} offre molti comandi per rappresentare le lettere greche e la notazione pi\`u comune. Ad esempio:
 
 \begin{exampletwouptiny}
 $\mu = \alpha \int_t e^{q/rt} dt$
@@ -571,8 +612,8 @@ per mostrarlo.
 \item Notate che $\Sigma$ \`e pi\`u grande nell'ambiente \bftt{equation}, e
 che apici e pedici cambiano di posizione, nonostante si siano usati gli
 stessi comandi
-\vskip 1em
-{\scriptsize In alternativa \mintinline{latex}!$...$! equivale a \cmdbegin{math}\bftt{...}\cmdend{math}.}
+\vskip 1ex
+{\scriptsize Di fatto \mintinline{latex}!$...$! equivale a \cmdbegin{math}\bftt{...}\cmdend{math} e quindi \`e un ambiente}
 \end{itemize}
 \end{frame}
 
@@ -583,19 +624,25 @@ stessi comandi
 \begin{itemize}
 \item I comandi \cmdbs{begin} e \cmdbs{end} si possono usare per creare molti
 ambienti diversi.
-\vskip 2ex
-
 \item Gli ambienti \bftt{itemize} ed \bftt{enumerate} generano liste.
 \begin{exampletwouptiny}
-\begin{itemize} % lista puntata
+\begin{itemize} % elenco puntato
 \item Biscotti
 \item T\'e
 \end{itemize}
 
-\begin{enumerate} % lista numerata
+\begin{enumerate} % elenco numerato
 \item Biscotti
 \item T\'e
 \end{enumerate}
+\end{exampletwouptiny}
+\vskip 1ex
+\item E \bftt{quote} e \bftt{quotation} permettono di inserire citazioni\ldots
+\begin{exampletwouptiny}
+\begin{quotation}
+Four score and seven years ago
+our fathers brought [\ldots]
+\end{quotation}
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -613,7 +660,7 @@ ambienti diversi.
 ci sono migliaia di pacchetti liberamente disponibili.
 
 \item I pacchetti che vogliamo usare vanno caricati esplicitamente usando il comando
-\cmdbs{usepackage} nel \structure{preambolo}.
+\cmdbs{usepackage} nel \structure{preambolo}, ovvero prima di \cmdbegin{document}, ma dopo \mintinline{latex}|\documentclass{...}|
 
 \item Esempio: \bftt{amsmath} della American Mathematical Society.
 \begin{minted}[fontsize=\small,frame=single]{latex}
