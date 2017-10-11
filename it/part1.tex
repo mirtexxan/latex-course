@@ -64,7 +64,9 @@ f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
 
 \begin{frame}{Esempi}
 \shapepar{\heartshape}
-If I speak in the tongues of men or of angels, but do not have love, I am only a resounding gong or a clanging cymbal. If I have the gift of prophecy and can fathom all mysteries and all knowledge, and if I have a faith that can move mountains, but do not have love, I am nothing.  If I give all I possess to the poor and give over my body to hardship that I may boast, but do not have love, I gain nothing. Love is patient, love is kind. It does not envy, it does not boast, it is not proud.  It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs.  Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres.
+Erano i capei d’oro a l’aura sparsi che ’n mille dolci nodi gli avolgea, e ’l vago lume oltra misura ardea di quei begli occhi, ch’or ne son sì scarsi; e ’l viso di pietosi color’ farsi, non so se vero o falso, mi parea: i’ che l’esca amorosa al petto avea,
+qual meraviglia se di sùbito arsi? Non era l’andar suo cosa mortale, ma d’angelica forma; e le parole sonavan altro, che pur voce humana.
+Uno spirto celeste, un vivo sole fu quel ch’i' vidi: e se non fosse or tale, piagha per allentar d’arco non sana.
 \end{frame}
 
 \begin{frame}{Esempi}
@@ -388,9 +390,9 @@ precedendoli con un backslash \keystrokebftt{\bs}\\
 \begin{itemize}
 \item Il caratteri base di \LaTeX{} sono per la lingua inglese (ASCII), ma per molte altre lingue, gli accenti sono importanti.
 \begin{itemize}
-\item \cmd{\bs`} si usa per l'accento grave
-\item \cmd{\bs'} si usa per l'accento acuto.
-\item \ldots in alternativa si possono inserire direttamente da tastiera
+\item \cmd{\bs`} (backslash+backtick) si usa per l'accento grave. Sfortunatamente l'apostrofo rovesciato non \`e semplice da inserire con la tastiera italiana.
+\item \cmd{\bs'} (backslash+apostrofo) si usa per l'accento acuto.
+\item Oppure si possono inserire direttamente le lettere accentate se:
 \begin{minted}{latex}
 \usepackage[latin1]{inputenc}
 \end{minted}
@@ -530,7 +532,10 @@ $\Omega = \sum_{k=1}^{n} \omega_k$
 \begin{frame}[fragile]{\insertsubsection{}: Equazioni non in linea}
 \begin{itemize}
 \item Un'equazione lunga e complessa, andrebbe mostrata a parte usando
-\cmdbegin{equation} e \cmdend{equation}.\\[2ex]
+\cmdbegin{equation} e \cmdend{equation}.
+\begin{itemize}
+\item In alternativa: \mintinline{latex}!$$...$$ o \[...\]!\\[2ex]
+\end{itemize}
 \begin{exampletwouptiny}
 Le radici di un'equazione quadratica
 sono date da
@@ -567,8 +572,7 @@ per mostrarlo.
 che apici e pedici cambiano di posizione, nonostante si siano usati gli
 stessi comandi
 \vskip 1em
-{\scriptsize Per simmetria, avremmo potuto scrivere \bftt{\$...\$} come
-\cmdbegin{math}\bftt{...}\cmdend{math}.}
+{\scriptsize In alternativa \mintinline{latex}!$...$! equivale a \cmdbegin{math}\bftt{...}\cmdend{math}.}
 \end{itemize}
 \end{frame}
 

@@ -2,7 +2,7 @@
 
 \input{preamble.tex}
 
-\subtitle{Parte 2: Verso documenti strutturati \& oltre}
+\subtitle{Parte 2: Documenti strutturati \& oltre}
 
 \begin{document}
 
@@ -16,7 +16,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Documenti strutturati}
+\section{Struttura}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,27 +220,28 @@ essere richiamate con \cmdbs{ref}.
 \begin{frame}[fragile]{\insertsubsection}
 \begin{itemize}
 \item Si usa l'ambiente \bftt{tabular} dal pacchetto \bftt{tabularx}.
-\item L'argomento imposta l'allineamento delle colunne --\\
-\textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
+\item L'argomento opzionale permette di impostare l'allineamento delle colonne --  \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
 \begin{exampletwouptiny}
 \begin{tabular}{lrr}
 Art.   & Num & \euro \\
-Coso   & 1   & 199.99  \\
-Gadget & 2   & 399.99  \\
+Tablet & 1   & 199.99  \\
+PC     & 2   & 399.99  \\
 Cavo   & 3   & 19.99   \\
 \end{tabular}
 \end{exampletwouptiny}
-\item L'argomento permette anche di specificare linee verticali;\\per quelle orizzontali si usa \cmdbs{hline}.
+\item L'opzione \keystrokebftt{|} permette anche di specificare linee verticali;
+per quelle orizzontali si usa \cmdbs{hline}.
+
 \begin{exampletwouptiny}
 \begin{tabular}{|l|r|r|} \hline
 Art.   & Num & \euro   \\\hline
-Coso   & 1   & 199.99  \\
-Gadget & 2   & 399.99  \\
+Tablet & 1   & 199.99  \\
+PC     & 2   & 399.99  \\
 Cavo   & 3   & 19.99   \\\hline
 \end{tabular}
 \end{exampletwouptiny}
-\item Usa l'ampersand \keystrokebftt{\&} per separare le colonne e un doppio backslash \keystrokebftt{\bs\bs} per iniziare una nuova riga
-(come nell'ambiente \bftt{align*} che abbiamo visto nella Parte 1).
+\item Usa l'ampersand \keystrokebftt{\&} per separare le colonne e un doppio backslash \keystrokebftt{\bs}\keystrokebftt{\bs} per iniziare una nuova riga\\[0.5em]
+\tiny come nell'ambiente \bftt{align*} che abbiamo visto nella Parte 1
 \end{itemize}
 \end{frame}
 
@@ -267,7 +268,9 @@ Cavo   & 3   & 19.99   \\\hline
 \begin{itemize}
 \item I riferimenti bibliografici andrebbero messi in un file \bftt{.bib}
 usando il formato `bibtex':
+
 \inputminted[fontsize=\scriptsize,frame=single]{latex}{bib-example.bib}
+
 \item La maggior parte dei motori di ricerca permettono di esportare
 direttamente in formato bibtex
 \end{itemize}
@@ -278,7 +281,9 @@ direttamente in formato bibtex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsubsection{} 2}
 \begin{itemize}
-\item Ogni elemento in un file \bftt{.bib} ha una \structure{chiave} che si usa per farne riferimento nel testo. Per esempio, \bftt{Scarson1999Stuff} \`e la chiave per l'articolo:
+\item Ogni elemento in un file \bftt{.bib} ha una \structure{chiave} che si usa per farne riferimento nel testo.
+\item Per esempio, \bftt{Scarson1999Stuff} \`e la chiave per l'articolo:
+
 \begin{minted}[fontsize=\small,frame=single]{latex}
 @Article{Scarson1999Stuff,
   author = {Von Scarson},
@@ -316,7 +321,7 @@ usato in molti \emph{template} di riviste.} con \cmdbs{citet} e \cmdbs{citep}.
 \subsection{Esercizio}
 \begin{frame}[fragile]{Esercizio: Mettiamo tutto insieme}
 
-Aggiungete un'immagine e la bibliografia all'articolo dell'esercizio precedente.
+Provate ad aggiungere un'immagine e una bibliografia di esempio (generata casualmente) all'articolo dell'esercizio precedente.
 
 \begin{enumerate}
 \item Scarica questi file di esempio sul tuo computer.
@@ -351,15 +356,15 @@ Aggiungete un'immagine e la bibliografia all'articolo dell'esercizio precedente.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Indici, classi, comandi\ldots}
+\subsection{\LaTeX intermedio\ldots}
 \begin{frame}[fragile]{\insertsubsection}
 \begin{itemize}
-\item Aggiungi un indice con il combando \cmdbs{tableofcontents}
+\item Aggiungi un indice con il comando \cmdbs{tableofcontents}
 a partire dai comandi di sezionamento come \cmdbs{section}.
 
 \item Cambia la classe del documento con \cmdbs{documentclass} a
 \mint{latex}!\documentclass{scrartcl}!
-o
+o magari a
 \mint{latex}!\documentclass[12pt]{IEEEtran}!
 
 \item Definisci comandi personalizzati per un'equazione complessa:
@@ -376,17 +381,17 @@ $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Qualche esempio di pacchetto}
+\subsection{Altri pacchetti\ldots}
 \begin{frame}{\insertsubsection}
 \begin{itemize}
-\item \bftt{beamer}: creazione di presentazioni (come questa!)
-\item \bftt{todonotes}: gestione commenti e TODO
-\item \bftt{tikz}: gestione della grafica
-\item \bftt{pgfplots}: per creare grafi in \LaTeX
-\item \bftt{listings}: per la composizione di codici sorgente
-\item \bftt{spreadtab}: creazione fogli di calcolo in \LaTeX
-\item \bftt{gchords}, \bftt{guitar}: spartiti e accordi per chitarra
-\item \bftt{cwpuzzle}: parole crociate
+\item \structure{\bftt{beamer}}: creazione di presentazioni (come questa!)
+\item \structure{\bftt{todonotes}}: gestione commenti e TODO
+\item \structure{\bftt{tikz}}: gestione della grafica
+\item \structure{\bftt{pgfplots}}: per creare grafi in \LaTeX
+\item \structure{\bftt{listings}}: per la composizione di codici sorgente
+\item \structure{\bftt{spreadtab}}: creazione fogli di calcolo in \LaTeX
+\item \structure{\bftt{gchords}}, \bftt{guitar}: spartiti e accordi per chitarra
+\item \structure{\bftt{cwpuzzle}}: parole crociate
 \end{itemize}
 Vai su \url{https://www.overleaf.com/latex/examples} e \url{http://texample.net}
 per trovare esempi che fanno uso di questi pacchetti\ldots
@@ -398,7 +403,8 @@ per trovare esempi che fanno uso di questi pacchetti\ldots
 \subsection{Installare \LaTeX{}}
 \begin{frame}{\insertsubsection}
 \begin{itemize}
-\item Per eseguire \LaTeX{} sul vostro computer, vi servir\`a una \structure{distribuzione} \LaTeX{}. Una distribuzione include il comando \bftt{latex} 
+\item Per lavorare con \LaTeX{} sul vostro computer, e non su Overleaf, vi servir\`a una \structure{distribuzione}.
+\item Una distribuzione include il comando \bftt{latex} 
 e qualche migliaio di pacchetti.
 \begin{itemize}
 \item Su Windows: \href{http://miktex.org/}{Mik\TeX} o \href{http://tug.org/texlive/}{\TeX Live}
@@ -406,8 +412,7 @@ e qualche migliaio di pacchetti.
 \item SU Mac: \href{http://tug.org/mactex/}{Mac\TeX}
 \end{itemize}
 \item Vi servir\`a anche un editor testuale con supporto \LaTeX{}. \url{http://en.wikipedia.org/wiki/Comparison_of_TeX_editors} compara tutte le possibili opzioni.
-\item Vorrete saperne di pi\`u sul funzionamento di \bftt{latex} e degli strumenti
-correlati --- alcune risorse sono sulla prossima slide.
+\item Per saperne di pi\`u sul funzionamento di \bftt{latex} --- alcune risorse sono sulla prossima slide.
 \end{itemize}
 \end{frame}
 
@@ -417,13 +422,13 @@ correlati --- alcune risorse sono sulla prossima slide.
 \subsection{Risorse addizionali}
 \begin{frame}{\insertsubsection}
 \begin{itemize}
-\item \href{http://en.wikibooks.org/wiki/LaTeX}{The \LaTeX{} Wikibook} ---
+\item \structure{\href{http://en.wikibooks.org/wiki/LaTeX}{The \LaTeX{} Wikibook}} ---
 materiale di riferimento ed eccellenti tutorial.
-\item \href{http://tex.stackexchange.com/}{\TeX{} Stack Exchange} --- fai domani e ottieni ottime risposte in pochissimo tempo
-\item \href{http://www.latex-community.org/}{\LaTeX{} Community} --- il principale forum degli utilizzatori
-\item \href{http://ctan.org/}{Comprehensive \TeX{} Archive Network (CTAN)} ---
+\item\structure{ \href{http://tex.stackexchange.com/}{\TeX{} Stack Exchange}} --- fai domani e ottieni ottime risposte in pochissimo tempo
+\item \structure{\href{http://www.latex-community.org/}{\LaTeX{} Community}} --- il principale forum degli utilizzatori
+\item \structure{\href{http://ctan.org/}{Comprehensive \TeX{} Archive Network (CTAN)}} ---
 oltre quattromila pacchetti e rispettiva documentazione
-\item Una ricerca diretta su Google\ldots
+\item Una ricerca diretta su \structure{Google}\ldots (che con tutta probabilit\`a vi porter\`a ad uno dei siti citati sopra)
 \end{itemize}
 \end{frame}
 

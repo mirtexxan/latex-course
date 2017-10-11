@@ -2,7 +2,7 @@
 
 \input{preamble.tex}
 
-\subtitle{Part 3: Not Just Papers: Presentations \& More}
+\subtitle{Part 3: Non solo articoli: Presentazioni, Grafica \& oltre}
 
 \newcommand{\alice}[1]{\todo[color=green!40]{#1}}
 \newcommand{\bob}[1]{\todo[color=purple!40]{#1}}
@@ -41,48 +41,46 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\LaTeX{} Recap}
+\section{Riassunto}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item You write your document in \texttt{plain text} with \cmd{commands} that
-describe its structure and meaning.
-\item The \texttt{latex} program processes your text and commands to produce a
-beautifully formatted document.
+\item Un documento \LaTeX{} \`e fatto di \texttt{testo semplice} inframezzato da \cmd{comandi} che ne definiscono struttura e significato.
+\item Il programma \texttt{latex} compila testo e comandi per comporre un documento
+formattato (e bello a vedersi)
 \end{itemize}
 \vskip 2ex
 \begin{center}
 \begin{minted}[frame=single]{latex}
-The rain in Spain falls \emph{mainly} on the plain.
+La rana in Spagna \emph{gracida} in montagna.
 \end{minted}
 \vskip 2ex
 \tikz\node[single arrow,fill=gray,font=\ttfamily\bfseries,%
   rotate=270,xshift=-1em]{latex};
 \vskip 2ex
-\fbox{The rain in Spain falls \emph{mainly} on the plain.}
+\fbox{La rana in Spagna \emph{gracida} in montagna.}
 \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Commands \& Arguments}
+\begin{frame}[fragile]{\insertsection: Comandi \& Argomenti}
 \begin{itemize}
-\item A command starts with a \emph{backslash} \keystrokebftt{\bs}.
-\item Some commands take an \emph{argument} in curly braces \keystrokebftt{\{}
-\keystrokebftt{\}}.
-\item Some commands also take \emph{optional arguments} in square brackets \keystrokebftt{[} \keystrokebftt{]}.
+\item Un compando inizia con un \emph{backslash} \keystrokebftt{\bs}.
+\item Alcuni comandi hanno \emph{argomenti obbligatori} racchiusi tra parentesi graffe \keystrokebftt{\{} \keystrokebftt{\}}.
+\item Alcuni comandi hanno inoltre \emph{argomenti opzionali} racchiusi tra parentesi quadre \keystrokebftt{[} \keystrokebftt{]}.
 \vskip 2ex
 \begin{exampletwouptiny}
 \includegraphics[
-  width=0.5\textwidth]{big_chick}
+  width=0.5\textwidth]{pulcino_grande}
 
 \includegraphics[
   width=0.3\textwidth,
-  angle=270]{big_chick}
+  angle=270]{pulcino_grande}
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -90,22 +88,21 @@ The rain in Spain falls \emph{mainly} on the plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Environments}
+\begin{frame}[fragile]{\insertsection: Ambienti}
 \begin{itemize}
-\item The \cmdbs{begin} and \cmdbs{end} commands are used to create many
-different environments --- contexts.
-
-\item The \bftt{itemize} and \bftt{enumerate} environments make lists.
+\item I comandi \cmdbs{begin} e \cmdbs{end} sono usati per creare ambienti ---
+o contesti semantici --- diversi.
+\item Esempio: gli ambienti \bftt{itemize} ed \bftt{enumerate} creano liste.
 \vskip 2ex
 \begin{exampletwouptiny}
-\begin{itemize} % for bullet points
-\item Biscuits
-\item Tea
+\begin{itemize} % elenchi puntati
+\item Biscotti
+\item T\'e
 \end{itemize}
 
-\begin{enumerate} % for numbers
-\item Biscuits
-\item Tea
+\begin{enumerate} % elenchi numerati
+\item Biscotti
+\item T\'e
 \end{enumerate}
 \end{exampletwouptiny}
 
@@ -115,9 +112,9 @@ different environments --- contexts.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Mathematics}
+\begin{frame}[fragile]{\insertsection: Matematica}
 \begin{itemize}
-\item The \bftt{equation} environment makes a numbered equation.
+\item L'ambiente \bftt{equation} crea un'equazione numerata.
 \begin{exampletwouptiny}
 \begin{equation}
   \sum_{k=1}^{n} \frac{1}{2^k}
@@ -125,36 +122,32 @@ different environments --- contexts.
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item Use dollar signs \keystrokebftt{\$} to mark mathematics in text.\\[1ex]
+\item I simboli dollaro \keystrokebftt{\$} si usano per inserire matematica nel testo. Due dollari \keystrokebftt{\$}\keystrokebftt{\$} si usano per equazioni non in linea\\[1ex]
 \begin{exampletwouptiny}
-% not so good:
-Let a and b be distinct positive
-integers, and let c = a - b + 1.
+% senza ambiente matematico:
+Siano a e b due interi positivi
+diversi, tali per cui c = a - b + 1.
 
-% much better:
-Let $a$ and $b$ be distinct positive
-integers, and let $c = a - b + 1$.
+% molto meglio:
+Siano $a$ e $b$ due interi positivi
+diversi, tali per cui $c = a - b + 1$.
 \end{exampletwouptiny}
 \vskip 2ex
-\item Always use dollar signs in pairs --- one to begin the mathematics, and one
-to end it.
-\vskip 1em
-{\scriptsize In fact, we could have written \bftt{\$...\$} as
-\cmdbegin{math}\bftt{...}\cmdend{math}.}
+\item Usate sempre i `dollari' in coppie --- uno per aprire l'ambiente matematico,
+l'altro per chiuderlo.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Document Structure}
+\begin{frame}[fragile]{\insertsection: Struttura del documento}
 \begin{itemize}{\small
-\item Starts with the \cmdbs{documentclass} --- what type of document.
-\item Metadata (\cmdbs{title} and \cmdbs{author}) and packages in the
-preamble.
-\item Content between \cmdbegin{document} and \cmdend{document}.
-\item The \cmdbs{maketitle} command creates the title; \cmdbs{section} commands
-create numbered sections.
+\item Inizia con una \cmdbs{documentclass} --- indica il tipo di documento.
+\item Metadati (\cmdbs{title} e \cmdbs{author}) e pacchetti vanno nel preambolo.
+\item Il contenuto tra \cmdbegin{document} e \cmdend{document}.
+\item Il comando \cmdbs{maketitle} stampa il titolo usando i metadati.
+\item I comandi \cmdbs{section} creano sezioni numerate.
 }\end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -169,27 +162,29 @@ create numbered sections.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Exercise}
+\begin{frame}[fragile]{\insertsection: Esercizio}
 
 \begin{enumerate}
-\item Here is the text for a short article:\footnote{Based on \url{http://www.cgd.ucar.edu/cms/agu/scientific_talk.html}}
+\item Questo \`e il testo di un breve articolo:\footnote{\tiny Tradotto e riassunto da \url{http://www.cgd.ucar.edu/cms/agu/scientific_talk.html}}
 \begin{center}
 \fbox{\href{\wlnewdoc{recap-exercise.tex}}{%
-Click to open this exercise in \wllogo{}}}
+Clicca per aprire l'esercizio su \wllogo{}}}
 \end{center}
 \vskip 2ex
-\item Add \LaTeX{} commands to the text to make it look like this one:
+\item Aggiungi comandi \LaTeX{} al testo per renderlo simile a:
 \begin{center}
 \fbox{\href{\fileuri/recap-exercise-solution.pdf}{%
-Click to open the model document}}
+Clicca per aprire il modello}}
 \end{center}
 \end{enumerate}
 
-\begin{block}{Hints}
+\begin{block}{Suggerimenti}
 \begin{itemize}
-\item Use the \bftt{enumerate} and \bftt{itemize} environments for lists.
-\item To typeset a \keystrokebftt{\%} percent sign, \emph{escape} it with a backslash (\cmdbs{\%}).
-\item To typeset the equation, use \cmdbs{frac} for the fraction and the \cmdbs{left(} and \cmdbs{right)} commands for the parentheses.
+\item Usa gli ambienti \bftt{enumerate} e \bftt{itemize} per le liste.
+\item Per mostra un percento \keystrokebftt{\%}, fai \emph{escape} con un backslash (\cmdbs{\%}).
+\item Ricordati di inserire gli accenti con \cmd{\bs`} e \cmd{\bs'}
+\item Nella formula usa \cmdbs{frac} per la frazione, e i comandi 
+\cmdbs{left(} e \cmdbs{right)} per le parentesi.
 \end{itemize}
 \end{block}
 \end{frame}
@@ -197,17 +192,17 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Presentations with \protect\bftt{beamer}}
+\section{Presentazioni con \protect\bftt{beamer}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item Beamer is a package for creating presentations (such as this one!) in
-\LaTeX{}.
-\item It provides the \bftt{beamer} document class.
-\item Use the \bftt{frame} environment to create slides.
+\item Beamer \`e un pacchetto per creare presentazioni
+(proprio come \structure{questa}!) in \LaTeX{}.
+\item Una presentazione inizia con \mintinline{latex}!\documentclass{beamer}!
+\item Per creare le slide si usa l'ambiente \bftt{frame}
 \end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -222,16 +217,15 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Following Along}
+\begin{frame}[fragile]{\insertsection: imparare facendo}
 
 \begin{itemize}
-\item As we go through the following slides, try out the examples by typing them
-into the example document on \wllogo.
+\item Mentre vi mostrer\`o le prossime slide, provate gli esempi inserendoli in un documento \wllogo.
 \end{itemize}
 \vskip 2ex
 \begin{center}
 \fbox{\href{\wlnewdoc{beamer-minimal.tex}}{%
-Click to open the example document in \wllogo{}}}
+Clicca per aprire l'esempio beamer minimo su \wllogo{}}}
 \end{center}
 \end{frame}
 
@@ -239,11 +233,12 @@ Click to open the example document in \wllogo{}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-\frametitle{\insertsection: Frames}
+\frametitle{\insertsection: frame}
 \begin{itemize}
-\item Use \cmdbs{frametitle} to give the frame a title.
-\item Then add content to the frame.
-\item The source for this frame looks like:
+\item I frame sono gli ambienti che generano singole diapositive
+\item Usa \cmdbs{frametitle} per dare un titolo al frame.
+\item Poi aggiungi un contenuto a piacere.
+\item Il sorgente di \structure{questa} diapositiva \`e simile a:
 \vskip 2ex
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
   {beamer-frame.tex}
@@ -253,12 +248,12 @@ Click to open the example document in \wllogo{}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Sections}
+\begin{frame}[fragile]{\insertsection: sezioni}
 \begin{itemize}
-\item You can use \cmdbs{section}s to group your \bftt{frame}s, and
-\bftt{beamer} will use them to create an automatic outline.
-\item To generate an outline, use the \cmdbs{tableofcontents} command. Here's
-one for this presentation. The \bftt{currentsection} option highlights the current section.
+\item I comandi \cmdbs{section} raggruppano i \bftt{frame}, e
+\bftt{beamer} li user\`a per generare in automatico l'indice.
+\item Per generare l'indice, usa il comando \cmdbs{tableofcontents}.
+\item Esempio: l'indice di questa presentazione. L'opzione \bftt{currentsection} evidenzia la sezione corrente.
 \vskip 2ex
 \begin{exampletwouptiny}
 \tableofcontents[currentsection]
@@ -269,15 +264,14 @@ one for this presentation. The \bftt{currentsection} option highlights the curre
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Multiple Columns}
+\begin{frame}[fragile]{\insertsection: colonne multiple}
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{itemize}
-\item Use the \bftt{columns} and \bftt{column} environments to break the slide
-into columns.
-\item The argument for each \bftt{column} determines its width.
-\item See also the \bftt{multicol} package, which automatically breaks your
-content into columns.
+\item Usa gli ambienti \bftt{columns} e \bftt{column} per dividere una slide
+in colonne.
+\item L'argomento di ogni \bftt{column} ne determina l'ampiezza.
+\item Vedi anche il pacchetto \bftt{multicol}, che divide \structure{automaticamente} il contenuto in colonne.
 \end{itemize}
 \end{column}
 \begin{column}{0.6\textwidth}
@@ -285,13 +279,13 @@ content into columns.
 \begin{columns}
   \begin{column}{0.4\textwidth}
     \begin{itemize}
-    \item Use the columns ...
-    \item The argument ...
-    \item See also the ...
+    \item Usa gli ambienti ...
+    \item L'argomento ...
+    \item Vedi anche ...
     \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}
-    % second column
+    % seconda colonna
   \end{column}
 \end{columns}
 \end{minted}
@@ -302,49 +296,49 @@ content into columns.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Highlights}
+\begin{frame}[fragile]{\insertsection: \emph{highlight}}
 \begin{itemize}
 
-\item Use \cmdbs{emph} or \cmdbs{alert} to highlight:
+\item Usa \cmdbs{structure} o \cmdbs{alert} per evidenziare:
 \vskip 1ex
 \begin{exampletwouptiny}
-I should \emph{emphasise} that
-this is an \alert{important} point.
+Dovrei \structure{enfatizzare} che
+questo \`e un punto \alert{importante}.
 \end{exampletwouptiny}
 \vskip 1ex
 
-\item Or specify bold face or italics:
+\item Usa grassetto o corsivo:
 \vskip 1ex
 \begin{exampletwouptiny}
-Text in \textbf{bold face}.
-Text in \textit{italics}.
+Testo in \textbf{grassetto}.
+Testo in \textit{corsivo}.
 \end{exampletwouptiny}
 \vskip 1ex
 
-\item Or specify a color (American spelling):
+\item O specifica un colore:
 \vskip 1ex
 \begin{exampletwouptiny}
-It \textcolor{red}{stops}
-and \textcolor{green}{starts}.
+Si \textcolor{red}{ferma} ma poi
+va \textcolor{green}{avanti}.
 \end{exampletwouptiny}
 \vskip 1ex
-\item See \url{http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-25.html}
-for more colors \& custom colors.
+\item \url{https://userpages.umbc.edu/~rostamia/beamer/quickstart-Z-H-25.html}
+per saperne di pi\`u sui colori.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Figures}
+\begin{frame}[fragile]{\insertsection: figure}
 \begin{itemize}
-\item Use \cmdbs{includegraphics} from the \bftt{graphicx} package.
-\item The \bftt{figure} environment centers by default, in \bftt{beamer}.
+\item Usa \cmdbs{includegraphics} dal pacchetto \bftt{graphicx}.
+\item L'ambiente \bftt{figure} centra di default, in \bftt{beamer}.
 \vskip 2ex
 \begin{exampletwouptiny}
 \begin{figure}
 \includegraphics[
-  width=0.5\textwidth]{big_chick}
+  width=0.5\textwidth]{pulcino_grande}
 \end{figure}
 \end{exampletwouptiny}
 \end{itemize}
@@ -353,49 +347,48 @@ for more colors \& custom colors.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Tables}
+\begin{frame}[fragile]{\insertsection: tabelle}
 \begin{itemize}
-\item Tables in \LaTeX{} take some getting used to.
-\item Use the \bftt{tabular} environment from the \bftt{tabularx} package.
-\item The argument specifies column alignment --- \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
+\item Si usa l'ambiente \bftt{tabular} dal pacchetto \bftt{tabularx}.
+\item L'argomento specifica l'allineamento -- tutto come al solito!
 \begin{exampletwouptiny}
 \begin{tabular}{lrr}
-Item   & Qty & Unit \$ \\
-Widget & 1   & 199.99  \\
-Gadget & 2   & 399.99  \\
-Cable  & 3   & 19.99   \\
+Art.   & Num & \euro \\
+Tablet & 1   & 199.99  \\
+PC     & 2   & 399.99  \\
+Cavo   & 3   & 19.99   \\
 \end{tabular}
 \end{exampletwouptiny}
-\item It also specifies vertical lines; use \cmdbs{hline} for horizontal lines.
+\item -- cos\`i come le linee verticali; per le orizzontali si usa \cmdbs{hline}.
 \begin{exampletwouptiny}
 \begin{tabular}{|l|r|r|} \hline
-Item   & Qty & Unit \$ \\\hline
-Widget & 1   & 199.99  \\
-Gadget & 2   & 399.99  \\
-Cable  & 3   & 19.99   \\\hline
+Art.   & Num & Unit \$ \\\hline
+Tablet & 1   & 199.99  \\
+PC     & 2   & 399.99  \\
+Cavo   & 3   & 19.99   \\\hline
 \end{tabular}
 \end{exampletwouptiny}
-\item Use an ampersand \keystrokebftt{\&} to separate columns and a double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} to start a new row.
+\item Ampersand \keystrokebftt{\&} per separare le colonne, mentre un doppio backslash \keystrokebftt{\bs}\keystrokebftt{\bs} separa le righe.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Blocks}
+\begin{frame}[fragile]{\insertsection: blocchi}
 \begin{itemize}
-\item A \bftt{block} environment makes a titled box.
+\item Un ambiente \bftt{block} crea un contenitore con un titolo.\\[0.5em]
 \begin{exampletwouptiny}
-\begin{block}{Interesting Fact}
-This is important.
+\begin{block}{Un fatto interessante}
+Questo \`e importante.
 \end{block}
 
-\begin{alertblock}{Cautionary Tale}
-This is really important!
+\begin{alertblock}{Attenzione!}
+Questo \`e \alert{molto} importante!
 \end{alertblock}
 \end{exampletwouptiny}
-
-\item How exactly they look depends on the theme\ldots
+\vskip 2ex
+\item Il loro aspetto, dipende dal \structure{tema} utilizzato\ldots
 \end{itemize}
 \end{frame}
 
@@ -403,17 +396,17 @@ This is really important!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-\frametitle{\insertsection: Themes}
+\frametitle{\insertsection: temi}
 \begin{itemize}
-\item Customise the look of your presentation using themes.
-\item See \url{http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html}
-for a large collection of themes.
+\item Permettono di personalizzare l'aspetto di una presentazione.
+\item \url{https://hartwork.org/beamer-theme-matrix/}
+d\`a un'idea delle possibilit\`a\ldots
 \end{itemize}
-\begin{minipage}{0.55\linewidth}
+\begin{minipage}{0.50\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
   {beamer-theme.tex}
 \end{minipage}
-\begin{minipage}{0.35\linewidth}
+\begin{minipage}{0.40\linewidth}
 % trim: l b r t
 \includegraphics[width=\textwidth]{beamer-theme.pdf}
 \end{minipage}
@@ -422,47 +415,47 @@ for a large collection of themes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Animation}
+\begin{frame}[fragile]{\insertsection: animazioni}
 \begin{itemize}
-\item A frame can generate multiple slides.
-\item Use the \cmdbs{pause} command to show only part of a slide.
+\item Un frame pu\`o generare pi\`u slide.
+\item Usa il comando \cmdbs{pause} per mostrare solo una parte di una slide.
 \vskip 2ex
 \begin{exampletwouptinynoframe}
 \begin{itemize}
-\item Can you feel the 
-\pause \item anticipation?
+\item Non vedi 
+\pause \item l'ora, no?
 \end{itemize}
 \end{exampletwouptinynoframe}
 \vskip 2ex
-\item There many more clever ways of making animations in \bftt{beamer}; see
-also the \cmdbs{only}, \cmdbs{alt}, and \cmdbs{uncover} commands.
+\item \bftt{beamer} offre molti comandi per gestire le animazioni; vedi ad esempio \cmdbs{only}, \cmdbs{alt}, e \cmdbs{uncover}.
+\item Per decidere in diapositive mostrare un contenuto, si impostano le \structure{overlay specification} con \keystrokebftt{<}\texttt{\ldots}\keystrokebftt{>}.
+\item Per esempio \mintinline{latex}|\onyl<2->{...}| mostra il contenuto dalla slide~2 in avanti, \mintinline{latex}|\uncover<1,3>{...}| solo nella~1 e nella~3. Provate a trovare le differenze tra i due comandi\ldots
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Exercise}
+\begin{frame}[fragile]{\insertsection: esercizio}
 
-Recreate Peter Norvig's excellent ``Gettysburg Powerpoint Presentation'' in \bftt{beamer}.\footnote{\url{http://norvig.com/Gettysburg}}
+Provate a ricreare la ``Gettysburg Powerpoint Presentation'' di Peter Norvig in \bftt{beamer}.\footnote{\url{http://norvig.com/Gettysburg}} Se conoscete la storia americana \`e molto divertente.
 
 \begin{enumerate}
-\item Open this exercise in \wllogo{}:
+\item Apri questo esercizio in \wllogo{}:
 \begin{center}
 \fbox{\href{\wlnewdoc{beamer-exercise.tex}}{%
-Click to open this exercise in \wllogo{}}}
+Clicca per aprire l'esercizio}}
 \end{center}
 \vskip 2ex
-\item Download this image to your computer and upload it to \wllogo{} via the
-files menu.
+\item Scarica questa immagine sul PC e caricala su \wllogo{} dal men\`u files.
 \begin{center}
-\fbox{\href{\fileuri/gettysburg_graph.png?dl=1}{Click to download image}}
+\fbox{\href{\fileuri/gettysburg_graph.png?dl=1}{Clicca per scaricare l'immagine}}
 \end{center}
 \vskip 2ex
-\item Add \LaTeX{} commands to the text to make it look like this one:
+\item Aggiungi comandi \LaTeX{} al testo per renderlo simile a questo:
 \begin{center}
 \fbox{\href{\fileuri/beamer-exercise-solution.pdf}{%
-Click to open the model document}}
+Clicca per aprire il modello}}
 \end{center}
 \end{enumerate}
 \end{frame}
@@ -470,25 +463,25 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Drawings with \protect\tikzname}
+\section{Disegnare con \protect\tikzname}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item \tikzname{} is a package for drawing figures in \LaTeX.
-\item It defines a powerful drawing language inside \LaTeX{}. Short programs can
-draw surprisingly complicated things.
+\item \tikzname{} \`e un pacchetto per disegnare immagini in \LaTeX.
+\item Definisce un potente linguaggio per il disegno.
+\item Brevi programmi possono generare immagini sorprendentemente complicate.
 \begin{figure}
 \href{http://www.texample.net/tikz/examples/rotated-triangle/}{%
   \includegraphics[width=0.35\textwidth]{rotated-triangle}}
 \end{figure}
-\item We'll start with simple things. To draw a line in \tikzname:
+\item Iniziamo dalle cose semplici. Per disegnare una linea in \tikzname:
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
-\draw (0,0) -- (1,1); % a line
+\draw (0,0) -- (1,1); % una linea
 \end{tikzpicture}
 \end{exampletwouptiny}
 \end{itemize}
@@ -497,9 +490,9 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Coordinates}
+\begin{frame}[fragile]{\insertsection: coordinate}
 \begin{itemize}
-\item The default coordinates are centimeters, with the usual sense: 
+\item Le coordinate di default sono espresse in centimetri, su un piano cartesiano orientato come in figura: 
 \begin{figure}
 \begin{tikzpicture}[scale=0.5]
 \draw[help lines] (0,0) grid (3,3);
@@ -509,7 +502,7 @@ draw surprisingly complicated things.
 \node[above left] at (0,3) {$(0,3)$};
 \end{tikzpicture}
 \end{figure}
-\item It helps to draw a grid when you are working with \tikzname:
+\item Spesso aiuta disegnare una griglia mentre si lavora con \tikzname:
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -522,10 +515,10 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Lines}
+\begin{frame}[fragile]{\insertsection: linee}
 \begin{itemize}
-\item Arrow heads and line styles are specified as options to the \cmdbs{draw} command.
-\item End each draw command with a \keystrokebftt{;} semicolon.
+\item Le direzioni delle frecce (se necessarie) e gli stili di disegno sono passati come opzioni al comando \cmdbs{draw}.
+\item Ogni comando draw termina con un \keystrokebftt{;} punto e virgola.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -541,20 +534,20 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Paths}
+\begin{frame}[fragile]{\insertsection: percorsi}
 \begin{itemize}
-\item You can specify multiple points to form a path.
-\item Arrows will appear only at the ends of the path.
+\item Si possono specificare pi\`u punti per comando, in modo da generare un percorso o \structure{path}.
+\item Le frecce sono disegnate solo alla fine del percorso.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (3,3);
-% axes:
+% assi:
 \draw[<->, thick] (0,3)--(0,0)--(3,0);
-% diamond:
+% rombo:
 \draw (1.5,0.5) -- (2.5,1.5) -- 
       (1.5,2.5) -- (0.5,1.5) --
-      cycle; % close the path
+      cycle; % chiude il percorso
 \end{tikzpicture}
 \end{exampletwouptiny}
 \end{itemize}
@@ -563,17 +556,17 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Colours}
+\begin{frame}[fragile]{\insertsection: colori}
 \begin{itemize}
-\item Colours are also specified as options to \cmdbs{draw}.
-\vskip 1ex
+\item Anche i colori si possono specificare come opzioni di \cmdbs{draw}.
+\vskip 2ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (3,3);
-% axes
+% assi rossi:
 \draw[<->, thick, red]
   (0,3)--(0,0)--(3,0); 
-% diamond
+% rombo giallo:
 \draw[thick, blue, fill=yellow]
   (1.5,0.5) -- (2.5,1.5) -- 
   (1.5,2.5) -- (0.5,1.5) --
@@ -586,10 +579,10 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Shapes}
+\begin{frame}[fragile]{\insertsection: forme}
 \begin{itemize}
-\item \tikzname{} has built-in commands for simple shapes.
-\vskip 1ex
+\item \tikzname{} offre diversi comandi per disegnare le forme pi\`u semplici.
+\vskip 2ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (3,3);
@@ -603,10 +596,11 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Nodes \& Labels}
+\begin{frame}[fragile]{\insertsection: nodi \& etichette}
 \begin{itemize}
-\item Use nodes to place text (and math) in \tikzname{} drawings.
-\item You can also use nodes as coordinates --- useful for diagrams.
+\item Il comando \cmd{node} pu\`o essere usato per posizionare testo
+(o matematica) in un disegno.
+\item Puoi anche specificare un nodo come coordinata --- \`e molto utile per creare diagrammi come nell'esempio.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -624,17 +618,17 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Functions}
+\begin{frame}[fragile]{\insertsection: funzioni}
 \begin{itemize}
-\item You can even plot some simple functions.
+\item \tikzname{} permette anche di disegnare funzioni semplici.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}[scale=0.5]
-% y axis
+% asse y
 \draw[<->, thick] (0,2) -- (0,-2);
-% x axis
+% asse x
 \draw[ ->, thick] (0,0) -- (7, 0); 
-% curves
+% curve
 \draw[cyan,domain=0:2*pi]
   plot (\x, {sin(\x r)});
 \draw[magenta,domain=0:2*pi]
@@ -647,9 +641,9 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Examples}
+\begin{frame}[fragile]{\insertsection: esempi}
 \begin{itemize}
-\item Check out \fbox{\href{http://texample.net/tikz/}{\TeX{}ample.net}} for many \tikzname{} examples:
+\item \fbox{\href{http://texample.net/tikz/}{\TeX{}ample.net}} contiene numerosi esempi delle bellissime cose che si possono realizzare in \tikzname{}:
 \end{itemize}
 \begin{figure}
 \href{http://texample.net/tikz/examples/escher-brick-penrose-triangle/}{%
@@ -664,8 +658,8 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Exercise}
-Draw this in \tikzname:\footnote{Based on \url{http://xkcd.com/1022}}
+\begin{frame}[fragile]{\insertsection: esercizio}
+Disegna questo in \tikzname:\footnote{Ispirato a \url{http://xkcd.com/}}
 \begin{figure}
 \input{tikz-exercise-solution}
 \end{figure}
@@ -674,29 +668,29 @@ Draw this in \tikzname:\footnote{Based on \url{http://xkcd.com/1022}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Notes with \protect\bftt{todonotes}}
+\section{Lasciare note con \protect\bftt{todonotes}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item The \cmdbs{todo} command from the \bftt{todonotes} package is great for
-leaving notes to yourself and your collaborators.
+\item Il comando \cmdbs{todo} del pacchetto \bftt{todonotes} package \`e perfetto per lasciare note per te e i tuoi collaboratori.
+
 \begin{exampletwouptiny}
-\todo{add results}
-\todo[color=blue!20]{fix method}
+\todo{controllare}
+\todo[color=blue!20]{correggere}
 \end{exampletwouptiny}
 \vskip 2ex
-\item Pro Tip: define your own commands with \cmdbs{newcommand}
+\item Interludio: definisci i tuoi comandi con \cmdbs{newcommand}
 \begin{minted}[fontsize=\scriptsize,frame=single]{latex}
 \newcommand{\alice}[1]{\todo[color=green!40]{#1}}
 \newcommand{\bob}[1]{\todo[color=purple!40]{#1}}
 \end{minted}
 This can save a lot of typing:
 \begin{exampletwouptiny}
-\alice{add results}
-\bob{fix method}
+\alice{controllare}
+\bob{correggere}
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -708,9 +702,9 @@ This can save a lot of typing:
 \begin{columns}
   \begin{column}{0.4\textwidth}
     \begin{itemize}
-    \item Only inline notes are supported with beamer, but margin notes are
-    supported for normal documents.
-    \item There is also a handy \cmdbs{listoftodos} command.
+    \item Solo le note in linea sono supportate da \texttt{beamer},
+    i documenti normali permettono anche \structure{note a margine}.
+    \item Esiste anche il comodo comando \cmdbs{listoftodos}.
     \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}
@@ -722,16 +716,16 @@ This can save a lot of typing:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Spreadsheets with \protect\bftt{spreadtab}}
+\section{Fogli di calcolo con \protect\bftt{spreadtab}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item Now that you've seen how \LaTeX{} can replace Word and PowerPoint, what
-about Excel?
-\item Homework: try the \fbox{\href{http://www.ctan.org/pkg/spreadtab}{\bftt{spreadtab} package}}!
+\item Abbiamo visto come \LaTeX{} possa rimpiazzare Word e PowerPoint, ma per quanto riguarda Excel?
+\item Compito a casa: provate il \fbox{\href{http://www.ctan.org/pkg/spreadtab}
+{pacchetto \bftt{spreadtab}}}!
 \end{itemize}
 \end{frame}
 
@@ -740,7 +734,7 @@ about Excel?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \begin{center}
-Thanks, and happy \TeX{}ing!
+Grazie, e buon \TeX{}ing!
 \end{center}
 \end{frame}
 
