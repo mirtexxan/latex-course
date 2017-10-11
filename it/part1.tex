@@ -19,22 +19,14 @@
 \section{Introduzione}
 \begin{frame}{Perch\'e \LaTeX{}?}
 \begin{itemize}
-\item Permette di realizzare documenti professionali e esteticamente appaganti
-\begin{itemize}
-\item Specialmente se contengono \structure{matematica}
-\end{itemize}
+\item Permette di realizzare bellissimi documenti professionali
+\item Specialmente se contengono matematica
 %
 \item \`E stato creato da scienziati, per scienziati
-\begin{itemize}
-\item Una comunit\`a enorme e molto attiva
-\item \ldots ma il suo uso \`e estendibile ad ogni campo
-\end{itemize}
+\item \ldots ma si pu\`o usare in ogni campo del sapere!
 %
 \item \`E potentissimo --- ed estendibile a piacimento
-\begin{itemize}
-\item \structure{Pacchetti} per articoli scientifici, libri, presentazioni,
-fogli di calcolo, \ldots
-\end{itemize}
+\item Utilissimo per scrivere \structure{articoli, libri, tesi di laurea}, \ldots 
 \end{itemize}
 \end{frame}
 
@@ -42,9 +34,6 @@ fogli di calcolo, \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Esempi}
-\begin{equation}
-\sum_{n=1}^k \frac{1}{n} ≻ \int_1^{k+1} \frac{1}{x} dx = \ln(k+1)
-\end{equation}
 \begin{equation}
 \sum_{n = 0}^\infty \frac{(-1)^{n}}{2n+1} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots = \frac{\pi}{4}
 \end{equation}
@@ -60,6 +49,8 @@ f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
 \begin{equation}
 \begin{bmatrix} 1 & 2\\ 3 & 4\\ \end{bmatrix} \begin{bmatrix} 0 & 1\\ 0 & 0\\ \end{bmatrix}= \begin{bmatrix} 0 & 1\\ 0 & 3\\ \end{bmatrix}
 \end{equation}
+\vskip 2ex
+\scriptsize e se imparate a fare matematica con Latex\ldots \url{http://latex2png.com/} 
 \end{frame}
 
 \begin{frame}{Esempi}
@@ -109,7 +100,7 @@ che significa \emph{arte} o \emph{tecnica}.
 
 \begin{frame}[fragile]{Come funziona?}
 \begin{itemize}
-\item Un documento \LaTeX{} \`e composto di \texttt{testo semplice} inframezzato a
+\item Un documento \LaTeX{} \`e composto di \texttt{testo semplice} misto a
 \cmd{comandi} che ne descrivono la struttura e il significato.
 \item L'applicazione \texttt{latex} \emph{compila} il testo e i comandi per produrre un documento perfettamente formattato.
 \item In altre parole: quello che l'utente vede sullo schermo \structure{non \`e} il documento formattato.
@@ -163,7 +154,7 @@ La rana in Spagna \emph{gracida} in campagna.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Un vero e proprio cambio di paradigma}
+\begin{frame}[fragile]{In sintesi}
 
 \begin{block}{Pregi}
 \begin{itemize}
@@ -178,7 +169,7 @@ La rana in Spagna \emph{gracida} in campagna.
 \end{block}
 
 
-\begin{alertblock}{\ldots e ricordate}
+\begin{alertblock}{Un cambio di paradigma}
 Usate i comandi per descrivere `cio che \`e' e non `ci\`o che appare': concentratevi sul contenuto e Lasciate fare a \LaTeX{} il suo lavoro!
 \end{alertblock}
 \end{frame}
@@ -289,6 +280,7 @@ Usate i comandi per descrivere `cio che \`e' e non `ci\`o che appare': concentra
 %
 %\end{frame}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -301,6 +293,7 @@ Usate i comandi per descrivere `cio che \`e' e non `ci\`o che appare': concentra
 \begin{frame}[fragile]{\insertsubsection}
 \begin{itemize}
 \item Il documento \LaTeX{} minimale:
+\vskip 2ex
 \inputminted[frame=single]{latex}{basics.tex}
 \item Tutti i comandi iniziano con un \emph{backslash} \keystrokebftt{\bs}.
 \item Ogni documento inizia con un comando \cmdbs{documentclass}.
