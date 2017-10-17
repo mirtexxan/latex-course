@@ -41,7 +41,7 @@ la \structure{strutturazione} del resto
 \vskip 2em
 \begin{center}
 \fbox{\href{\wlnewdoc{basics.tex}}{%
-Clicca qui per aprire il documento di esempio in \wllogo{}}}
+Clicca qui per aprire il documento \texttt{basics.tex} in \wllogo{}}}
 \\[1ex]\scriptsize{}
 Per migliore compatibilit\`a, usate \href{http://www.google.com/chrome}{Chrome} o un  \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox} recente.
 \end{center}
@@ -61,6 +61,9 @@ Per migliore compatibilit\`a, usate \href{http://www.google.com/chrome}{Chrome} 
 \item Usate \cmdbs{maketitle} nel corpo per comporre il titolo.
 \item Usate l'ambiente \bftt{abstract} per creare un sommario.
 \item Per ottenere i nomi degli elementi in italiano, si usa \cmdbs{babel}
+\begin{itemize}
+\item File \texttt{structure-title.tex}
+\end{itemize}
 }\end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -80,6 +83,9 @@ Per migliore compatibilit\`a, usate \href{http://www.google.com/chrome}{Chrome} 
 \item Dividere il documento in sezioni e sottosezioni \`e semplice:
 basta usare \cmdbs{section} e \cmdbs{subsection}.
 \item Riuscite ad indovinare cosa fanno \cmdbs{section*} e \cmdbs{subsection*}?
+\begin{itemize}
+\item File \texttt{structure-sections.tex}
+\end{itemize}
 }\end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -98,8 +104,11 @@ basta usare \cmdbs{section} e \cmdbs{subsection}.
 \begin{itemize}{\small
 \item Usate i comandi \cmdbs{label} e \cmdbs{ref} per la numerazione automatica
 e i riferimenti incrociati.
-\item Il pacchetto \bftt{amsmath} offre il comando \cmdbs{eqref} per numerare
+\item Il pacchetto \bftt{amsmath} offre \cmdbs{eqref} per numerare
 le equazioni.
+\begin{itemize}
+\item File \texttt{structure-crossref.tex}
+\end{itemize}
 }\end{itemize}
 \begin{minipage}{0.50\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -116,10 +125,10 @@ le equazioni.
 \subsection{Esercizio}
 \begin{frame}[fragile]{Esercizio sulla struttura dei documenti}
 
-\begin{block}{Scrivi questo breve paper in \LaTeX\footnote{Da \url{http://pdos.csail.mit.edu/scigen/}, un generatore casuale di paper.}:}
+\begin{block}{Scrivi questo breve paper in \LaTeX\footnote{\url{http://pdos.csail.mit.edu/scigen/} --- un generatore casuale di paper.}:}
 \begin{center}
 \fbox{\href{\fileuri/structure-exercise-solution.pdf}{%
-Clicca per aprire il paper}}
+Clicca per aprire il paper (\texttt{structure-exercise-solution.pdf})}}
 \end{center}
 Cercate di rendere il paper simile a quello dell'esempio. Usate \cmdbs{ref} e \cmdbs{eqref} per evitare di scrivere esplicitamente nel testo i numeri
 di sezione e delle equazioni.
@@ -127,7 +136,7 @@ di sezione e delle equazioni.
 \vskip 2ex
 \begin{center}
 \fbox{\href{\wlnewdoc{structure-exercise.tex}}{%
-Clicca per aprire questo esercizio con \wllogo{}}}
+Clicca per aprire \texttt{structure-exercise.tex} con \wllogo{}}}
 \end{center}
 
 \begin{itemize}
@@ -171,7 +180,7 @@ JPEG, PNG e PDF. Altri pacchetti supportano altri formati.
   angle=270]{pulcino_grande}
 \end{exampletwouptiny}
 
-\tiny{Image from \url{http://www.andy-roberts.net/writing/latex/importing_images}}
+\tiny{Fonte: \url{http://www.andy-roberts.net/writing/latex/importing_images}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,6 +212,9 @@ Alla fine della presentazione, mostrer\`o alcuni link\ldots
 \item Permettono a \LaTeX{} di decidere il posizionamento della figura (potr\`a `flottare' -- o galleggiare -- nel testo).
 \item Cos\`i facendo \`e anche possibile dare didascalie alle figure, che possono
 essere richiamate con \cmdbs{ref}.
+\begin{itemize}
+\item File \texttt{media-graphics.tex}
+\end{itemize}
 \end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -267,7 +279,7 @@ Cavo   & 3   & 19.99   \\\hline
 \begin{frame}[fragile]{\insertsubsection{} 1}
 \begin{itemize}
 \item I riferimenti bibliografici andrebbero messi in un file \bftt{.bib}
-usando il formato `bibtex':
+usando il formato `bibtex' (es. \bftt{bib-example.bib}):
 
 \inputminted[fontsize=\scriptsize,frame=single]{latex}{bib-example.bib}
 
@@ -301,9 +313,9 @@ nome, anno e titolo del paper.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsubsection{} 3}
 \begin{itemize}
-\item Usate il pacchetto \bftt{natbib}\footnote{Il pacchetto \bftt{biblatex}
-\`e pi\`u recente e potente ma \bftt{natbib} \`e ancora il pi\`u diffuso e
-usato in molti \emph{template} di riviste.} con \cmdbs{citet} e \cmdbs{citep}.
+\item Usate il pacchetto \bftt{natbib}\footnote{\bftt{biblatex}
+\`e pi\`u ricco ma \bftt{natbib} \`e ancora il pi\`u diffuso e
+usato in molti \emph{template} di riviste. File di esempio: \bftt{bib-example.tex}} con \cmdbs{citet} e \cmdbs{citep}.
 \item Includete la bibliografia con il comando \cmdbs{bibliography} alla fine, e specificate uno stile con \cmdbs{bibliographystyle}.
 \end{itemize}
 \begin{minipage}{0.55\linewidth}
@@ -328,10 +340,10 @@ Provate ad aggiungere un'immagine e una bibliografia di esempio (generata casual
 
 \begin{center}
 \fbox{\href{\fileuri/pulcino_grande.png?dl=1}
-{Clicca per scaricare l'immagine di esempio}}
+{Clicca per scaricare \bftt{pulcino\_grande.png}}}
 
 \fbox{\href{\fileuri/bib-exercise.bib?dl=1}
-{Clicca per scaricare il file .bib di esempio}}
+{Clicca per scaricare \bftt{bib-exercise.bib}}}
 \end{center}
 
 \item Caricali su Overleaf (usa il men\`u \structure{Project}).
@@ -356,7 +368,7 @@ Provate ad aggiungere un'immagine e una bibliografia di esempio (generata casual
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\LaTeX intermedio\ldots}
+\subsection{\LaTeX{} intermedio\ldots}
 \begin{frame}[fragile]{\insertsubsection}
 \begin{itemize}
 \item Aggiungi un indice con il comando \cmdbs{tableofcontents}
@@ -387,14 +399,14 @@ $$
 \item \structure{\bftt{beamer}}: creazione di presentazioni (come questa!)
 \item \structure{\bftt{todonotes}}: gestione commenti e TODO
 \item \structure{\bftt{tikz}}: gestione della grafica
-\item \structure{\bftt{pgfplots}}: per creare grafi in \LaTeX
-\item \structure{\bftt{listings}}: per la composizione di codici sorgente
-\item \structure{\bftt{spreadtab}}: creazione fogli di calcolo in \LaTeX
+\item \structure{\bftt{pgfplots}}: per creare grafici in \LaTeX
+\item \structure{\bftt{listings}}: per inserire codici sorgente nel testo
+\item \structure{\bftt{spreadtab}}: creazione fogli di calcolo in \LaTeX{}
 \item \structure{\bftt{gchords}}, \bftt{guitar}: spartiti e accordi per chitarra
 \item \structure{\bftt{cwpuzzle}}: parole crociate
 \end{itemize}
 Vai su \url{https://www.overleaf.com/latex/examples} e \url{http://texample.net}
-per trovare esempi che fanno uso di questi pacchetti\ldots
+contengono numerosi esempi\ldots
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -412,7 +424,6 @@ e qualche migliaio di pacchetti.
 \item SU Mac: \href{http://tug.org/mactex/}{Mac\TeX}
 \end{itemize}
 \item Vi servir\`a anche un editor testuale con supporto \LaTeX{}. \url{http://en.wikipedia.org/wiki/Comparison_of_TeX_editors} compara tutte le possibili opzioni.
-\item Per saperne di pi\`u sul funzionamento di \bftt{latex} --- alcune risorse sono sulla prossima slide.
 \end{itemize}
 \end{frame}
 
@@ -423,11 +434,11 @@ e qualche migliaio di pacchetti.
 \begin{frame}{\insertsubsection}
 \begin{itemize}
 \item \structure{\href{http://en.wikibooks.org/wiki/LaTeX}{The \LaTeX{} Wikibook}} ---
-materiale di riferimento ed eccellenti tutorial.
-\item\structure{ \href{http://tex.stackexchange.com/}{\TeX{} Stack Exchange}} --- fai domani e ottieni ottime risposte in pochissimo tempo
+materiale di riferimento e tutorial.
+\item\structure{ \href{http://tex.stackexchange.com/}{\TeX{} Stack Exchange}} --- fai domande e ottieni risposte
 \item \structure{\href{http://www.latex-community.org/}{\LaTeX{} Community}} --- il principale forum degli utilizzatori
 \item \structure{\href{http://ctan.org/}{Comprehensive \TeX{} Archive Network (CTAN)}} ---
-oltre quattromila pacchetti e rispettiva documentazione
+oltre quattromila pacchetti e relativa documentazione
 \item Una ricerca diretta su \structure{Google}\ldots (che con tutta probabilit\`a vi porter\`a ad uno dei siti citati sopra)
 \end{itemize}
 \end{frame}

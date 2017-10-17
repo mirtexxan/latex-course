@@ -148,6 +148,9 @@ l'altro per chiuderlo.
 \item Il contenuto tra \cmdbegin{document} e \cmdend{document}.
 \item Il comando \cmdbs{maketitle} stampa il titolo usando i metadati.
 \item I comandi \cmdbs{section} creano sezioni numerate.
+\begin{itemize}
+\item File \bftt{recap-structure.tex}
+\end{itemize}
 }\end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -168,13 +171,13 @@ l'altro per chiuderlo.
 \item Questo \`e il testo di un breve articolo:\footnote{\tiny Tradotto e riassunto da \url{http://www.cgd.ucar.edu/cms/agu/scientific_talk.html}}
 \begin{center}
 \fbox{\href{\wlnewdoc{recap-exercise.tex}}{%
-Clicca per aprire l'esercizio su \wllogo{}}}
+Clicca per aprire \bftt{recap-exercise.tex} su \wllogo{}}}
 \end{center}
 \vskip 2ex
 \item Aggiungi comandi \LaTeX{} al testo per renderlo simile a:
 \begin{center}
 \fbox{\href{\fileuri/recap-exercise-solution.pdf}{%
-Clicca per aprire il modello}}
+Modello: \bftt{recap-exercise-solution.pdf}}}
 \end{center}
 \end{enumerate}
 
@@ -199,10 +202,13 @@ Clicca per aprire il modello}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item Beamer \`e un pacchetto per creare presentazioni
+\item Beamer \`e un pacchetto per creare presentazioni\\
 (proprio come \structure{questa}!) in \LaTeX{}.
 \item Una presentazione inizia con \mintinline{latex}!\documentclass{beamer}!
 \item Per creare le slide si usa l'ambiente \bftt{frame}
+\begin{itemize}
+\item File: \bftt{beamer-minimal.tex}
+\end{itemize}
 \end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -217,7 +223,7 @@ Clicca per aprire il modello}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: questo \`e un workshop!}
+\begin{frame}[fragile]{\insertsection\ldots e \wllogo}
 
 \begin{itemize}
 \item Mentre vi mostrer\`o le prossime slide, provate gli esempi inserendoli in un documento \wllogo.
@@ -225,7 +231,7 @@ Clicca per aprire il modello}}
 \vskip 2ex
 \begin{center}
 \fbox{\href{\wlnewdoc{beamer-minimal.tex}}{%
-Clicca per aprire l'esempio beamer minimo su \wllogo{}}}
+Clicca per aprire \bftt{beamer-minimal.tex} su \wllogo{}}}
 \end{center}
 \end{frame}
 
@@ -238,7 +244,7 @@ Clicca per aprire l'esempio beamer minimo su \wllogo{}}}
 \item I frame sono gli ambienti che generano singole diapositive
 \item Usa \cmdbs{frametitle} per dare un titolo al frame.
 \item Poi aggiungi un contenuto a piacere.
-\item Il sorgente di \structure{questa} diapositiva \`e simile a:
+\item Il sorgente di questa diapositiva \`e \structure{simile} a:
 \vskip 2ex
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
   {beamer-frame.tex}
@@ -401,6 +407,9 @@ Questo \`e \alert{molto} importante!
 \item Permettono di personalizzare l'aspetto di una presentazione.
 \item \url{https://hartwork.org/beamer-theme-matrix/}
 d\`a un'idea delle possibilit\`a\ldots
+\begin{itemize}
+\item File: \bftt{beamer-theme.tex}
+\end{itemize}
 \end{itemize}
 \begin{minipage}{0.50\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -438,24 +447,25 @@ d\`a un'idea delle possibilit\`a\ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection: esercizio}
 
-Provate a ricreare la ``Gettysburg Powerpoint Presentation'' di Peter Norvig in \bftt{beamer}.\footnote{\url{http://norvig.com/Gettysburg}} Se conoscete la storia americana \`e molto divertente.
+Provate a ricreare la ``Gettysburg Powerpoint Presentation'' di Peter Norvig in \bftt{beamer}.\footnote{\url{http://norvig.com/Gettysburg}}\\
+Se conoscete la storia americana \`e molto divertente.
 
 \begin{enumerate}
 \item Apri questo esercizio in \wllogo{}:
 \begin{center}
 \fbox{\href{\wlnewdoc{beamer-exercise.tex}}{%
-Clicca per aprire l'esercizio}}
+Clicca per aprire \bftt{beamer-exercise.tex}}}
 \end{center}
 \vskip 2ex
-\item Scarica questa immagine sul PC e caricala su \wllogo{} dal men\`u files.
+\item Scarica questa immagine e caricala su \wllogo{} dal men\`u files.
 \begin{center}
-\fbox{\href{\fileuri/gettysburg_graph.png?dl=1}{Clicca per scaricare l'immagine}}
+\fbox{\href{\fileuri/gettysburg_graph.png?dl=1}{Clicca per scaricare \bftt{gettysburg\_graph.png}}}
 \end{center}
 \vskip 2ex
 \item Aggiungi comandi \LaTeX{} al testo per renderlo simile a questo:
 \begin{center}
 \fbox{\href{\fileuri/beamer-exercise-solution.pdf}{%
-Clicca per aprire il modello}}
+Modello: \bftt{beamer-exercise-solution.pdf}}}
 \end{center}
 \end{enumerate}
 \end{frame}
@@ -659,7 +669,7 @@ Clicca per aprire il modello}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection: esercizio}
-Disegna questo in \tikzname:\footnote{Ispirato a \url{http://xkcd.com/}}
+Disegna questo in \tikzname:\footnote{Ispirato a \url{http://xkcd.com/}. Soluzione: \bftt{tikz-exercise-solution.tex}}
 \begin{figure}
 \input{tikz-exercise-solution}
 \end{figure}
