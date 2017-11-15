@@ -1,20 +1,23 @@
 \documentclass[a4paper,titlepage]{amsbook}
 \usepackage[italian]{babel}
-% more packages
+\usepackage{lipsum}
 
-\begin{document}
 \title{La mia tesi}
 \author{A. U. Tore}
+
+\begin{document}
 \maketitle
 
 \frontmatter
-
 \tableofcontents
 
-\chapter{Introduzione}
+\chapter*{Introduzione}
+\lipsum
 
-Scopo di questa tesi \`e di dimostrare
-che $P=NP$, basandosi su una recente
-costruzione della quadratura del cerchio.
+\mainmatter
+\chapter{Stato dell'arte}
+\lipsum
+
+\backmatter
 
 \end{document}

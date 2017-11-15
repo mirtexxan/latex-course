@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Struttura di base}
 \begin{itemize}
-\item Dichiarazione della \structure{classe} (quale?)
+\item Dichiarazione della \structure{classe} (\cmd{book} o \cmd{amsbook})
 \item Preambolo (cosa includere?)
 \item \cmdbegin{document}
 \item Documento
@@ -29,59 +29,6 @@
 \end{itemize}
 \item \cmdend{document}
 \end{itemize}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Preambolo: margini}
-
-\begin{itemize}
-\item Di base \LaTeX{} ha margini molto larghi. Per modificare le impostazione predefinite, si usa il pacchetto \cmd{geometry}:
-
-\begin{minted}[frame=single]{latex}
-\usepackage[top=2.8cm, bottom=2.5cm,
-	left=2.1cm, right=1.7cm]{geometry}
-\end{minted}
-\item Una volta scelti i parametri serve specificare se il documento sar\`a \structure{fronte-retro} (FR) o \structure{solo-fronte} (SF)
-\item Nel caso SF \`e sufficiente l'opzione \cmd{oneside}. Nel caso FR serve invece l'opzione \cmd{twoside}
-\begin{minted}[frame=single]{latex}
-\documentclass[...,oneside,...]{book|article}
-\documentclass[...,twoside,...]{book|article}
-\end{minted}
-\item Se lo si vuole FR ma con i margini fissi, allora si usa sempre la stessa opzione, ma si altera il comando geometry:
-\begin{minted}[frame=single]{latex}
-\usepackage[asymmetric,...]{geometry}
-\end{minted}
-\end{itemize}
-
-
-
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Preambolo: miscellanea}
-\begin{itemize}
-\item Per modificare l'interlinea si usa il comando:
-\begin{minted}[frame=single]{latex}
-\linespread{1.5}
-\end{minted}
-\item Per iniziare un paragrafo con una lettera miniata si usa il pacchetto \cmd{lettrine}
-\begin{exampletwouptiny}
-\lettrine{E}{cco} un esempio.
-\end{exampletwouptiny}
-\item Attraverso il pacchetto \cmd{bookmark} \`e possibile rendere il proprio file pi\`u facile alla lettura. Le impostazioni:
-
-\begin{minted}[frame=single]{latex}
-\usepackage[open, openlevel=1]{bookmark}
-\end{minted}
-rendono il file \structure{navigabile}, ovvero ogni elemento dell'indice e della bibliografia diventano dei collegamenti ipertestuali.
-\end{itemize}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,6 +108,55 @@ principale. Il problema \`e tutto sommato poco importante. Va risolto caso per c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Preambolo: margini}
+
+\begin{itemize}
+\item Di base \LaTeX{} ha margini molto larghi. Per modificare le impostazione predefinite, si usa il pacchetto \cmd{geometry}:
+
+\begin{minted}[frame=single]{latex}
+\usepackage[top=2.8cm, bottom=2.5cm,
+	left=2.1cm, right=1.7cm]{geometry}
+\end{minted}
+\item Una volta scelti i parametri serve specificare se il documento sar\`a \structure{fronte-retro} (FR) o \structure{solo-fronte} (SF)
+\item Nel caso SF \`e sufficiente l'opzione \cmd{oneside}. Nel caso FR serve invece l'opzione \cmd{twoside}
+\begin{minted}[frame=single]{latex}
+\documentclass[...,oneside,...]{book|article}
+\documentclass[...,twoside,...]{book|article}
+\end{minted}
+\item Se lo si vuole FR ma con i margini fissi, allora si usa sempre la stessa opzione, ma si altera il comando geometry:
+\begin{minted}[frame=single]{latex}
+\usepackage[asymmetric,...]{geometry}
+\end{minted}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Preambolo: miscellanea}
+\begin{itemize}
+\item Per modificare l'interlinea si usa il comando:
+\begin{minted}[frame=single]{latex}
+\linespread{1.5}
+\end{minted}
+\item Per iniziare un paragrafo con una lettera miniata si usa il pacchetto \cmd{lettrine}
+\begin{exampletwouptiny}
+\lettrine{E}{cco} un esempio.
+\end{exampletwouptiny}
+\item Attraverso il pacchetto \cmd{bookmark} \`e possibile rendere il proprio file pi\`u facile alla lettura. Le impostazioni:
+
+\begin{minted}[frame=single]{latex}
+\usepackage[open, openlevel=1]{bookmark}
+\end{minted}
+rendono il file \structure{navigabile}, ovvero ogni elemento dell'indice e della bibliografia diventano dei collegamenti ipertestuali.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Materiale preliminare}
 
 \begin{itemize}
@@ -197,6 +193,14 @@ Dopo l'indice, se necessario, potranno esserci:
 \item una prefazione o l'introduzione; solitamente sono capitoli non numerati con sezioni non numerate:
 \begin{center}
 \Large\cmdbs{chapter*} \cmdbs{section*}
+\end{center}
+\item Per passare al materiale principale si usa
+\begin{center}
+\Large\cmdbs{mainmatter}
+\end{center}
+\item Similmente, per passare al materiale finale si usa:
+\begin{center}
+\Large\cmdbs{backmatter}
 \end{center}
 \end{itemize}
 \end{frame}
@@ -242,30 +246,76 @@ tramite l'ambiente \cmd{lstlisting}
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Numerazione delle pagine}
+\begin{itemize}
+\item Esistono diversi modi di \structure{numerare} le pagine
+\begin{itemize}
+\item roman (i, ii, iii, iv, \ldots)
+\item arabic (1, 2, 3, 4, \ldots
+\item Roman (I, II, III, IV, \ldots)
+\item alph (a, b, c, e, j, \ldots)
+\item Alph (A, B, C, E, J, \ldots)
+\end{itemize}
+\item \`E possibile impostare lo stesso stile di numerazione per tutto il testo o sceglierne diversi in base alla struttura con il comando:
+\begin{center}
+\Large\cmdbs{pagenumbering}
+\end{center}
+\item \cmdbs{frontmatter} usa la numerazione romana, \cmdbs{mainmatter} resetta la numerazione e usa quella araba, \cmdbs{backmatter} non tocca la numerazione
+\end{itemize}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Scheletro di una tesi}
+\begin{frame}[fragile]{Stili della testata e del pi\`e di pagina}
 
-\begin{minipage}{0.65\linewidth}
+\begin{itemize}
+\item Si usano i pacchetti \cmd{fancyhdr} e \cmd{lastpage}
+\item \`E sufficiente inserire nel preambolo \mintinline{latex}!\pagestyle{stile}!
+\item Le possibili opzioni:
+\begin{itemize}
+\item \emph{empty} (pagina vuota, solo testo)
+\item \emph{plain} (pagina con numerazione centrata in basso)
+\item \emph{headings }(in alto numero di pagina e capitolo)
+\item \emph{fancy} per totale personalizzazione \ldots
+\end{itemize}
+\item Per documenti fronteretro andrebbero diversificati header e footer di pagine pari e pagine dispari\ldots
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Esempio stili}
+\begin{minipage}{0.50\linewidth}
+\inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
+  {style.tex}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+\includegraphics[width=\textwidth,clip,trim=1.5in 0.5in 1.5in 1in]{style.pdf}
+\end{minipage}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Esercizio: scheletro di una tesi}
+
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
   {thesis.tex}
-\end{minipage}
-\begin{minipage}{0.30\linewidth}
-% trim: l b r t
-\includegraphics[width=\textwidth,clip,trim=1.5in 7in 3in 2in]{recap-structure.pdf}
-\end{minipage}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Esercizio}
+\begin{frame}{Esercizio: adesso tocca a voi!}
 \begin{itemize}
-\item Provate a costruire lo scheletro di una tesi di laurea.
-\item Adesso tocca a voi: dovete partire da zero!
+\item Provate ad abbozzare la \structure{vostra} tesi di laurea.
+\item Niente pi\`u aiuti: dovete partire da zero!
 \end{itemize}
 
 \begin{block}{Obiettivi}
@@ -275,10 +325,21 @@ tramite l'ambiente \cmd{lstlisting}
 \item Generate la pagina del titolo
 \item Generate l'indice con il livello prescelto
 \item Scrivete un abbozzo di introduzione e capitolo (consiglio: usate il pacchetto \cmd{lipsum} per generare testo.
-\item Provate ad inserire riferimenti incrociati, bibliografia, elenchi, tabelle, figure, formule, sorgenti, \ldots
+\item Provate ad inserire riferimenti incrociati, bibliografia, elenchi, tabelle, figure, formule, sorgenti, ispirandovi liberamente agli esercizi delle lezioni passate\ldots
 \end{itemize}
 \end{block}
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Fine del corso}
+\begin{center}
+Ora siete pronte a lanciarvi nel mondo di \LaTeX{}!
+
+In bocca al lupo!
+\end{center}
 \end{frame}
 
 \end{document}
